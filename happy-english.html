@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy English Brasília | Curso de Inglês para Crianças e Jovens de 5 a 17 Anos</title>
+  <meta name="description" content="Seu filho aprendendo inglês de verdade, com confiança e do jeito Happy. Turmas para crianças e jovens de 5 a 17+ anos em Brasília. Garanta a vaga!" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'Kobe';
+      src: url('fonte/Kobe11-Black.woff2') format('woff2'),
+           url('fonte/Kobe11-Black.woff') format('woff'),
+           url('fonte/Kobe11-Black.ttf') format('truetype');
+      font-weight: 900; font-style: normal; font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:         #0C306C;
+      --orange:       #F37021;
+      --orange-dark:  #733610;
+      --orange-light: #FEF0E6;
+      --white:        #FFFFFF;
+      --gray-bg:      #F5F6FA;
+      --gray-text:    #555;
+      --title-font:   'Kobe', 'Arial Black', Impact, sans-serif;
+      --body-font:    'Roboto', Arial, sans-serif;
+      --cond-font:    'Roboto Condensed', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body  { font-family: var(--body-font); color: #333; background: #fff; overflow-x: hidden; }
+    img   { max-width: 100%; display: block; }
+
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    .section-title {
+      font-family: var(--title-font);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .btn {
+      display: inline-block; padding: 16px 32px; border-radius: 8px;
+      font-family: var(--body-font); font-weight: 700; font-size: 1rem;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: transform .2s, box-shadow .2s; text-align: center;
+    }
+    .btn:hover  { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+    .btn:active { transform: translateY(0); }
+    .btn-orange { background: var(--orange); color: #fff; }
+    .btn-blue   { background: var(--blue);   color: #fff; }
+    .btn-white  { background: #fff; color: var(--orange); }
+    .btn-full   { width: 100%; display: block; }
+
+    /* HEADER */
+    #site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--blue); padding: 12px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    #site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    #site-header .logo img  { height: 44px; width: auto; }
+    #site-header nav        { display: flex; gap: 28px; align-items: center; }
+    #site-header nav a      { color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .2s; }
+    #site-header nav a:hover { color: var(--orange); }
+    #site-header .nav-cta   { background: var(--orange); color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 700 !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      background-color: var(--blue);
+      background-image:
+        radial-gradient(circle at 10% 85%, rgba(243,112,33,.15) 0%, transparent 55%),
+        radial-gradient(circle at 92% 8%,  rgba(243,112,33,.10) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='820'%3E%3Ccircle cx='720' cy='410' r='580' fill='none' stroke='rgba(243,112,33,0.05)' stroke-width='100'/%3E%3Ccircle cx='720' cy='410' r='380' fill='none' stroke='rgba(243,112,33,0.04)' stroke-width='60'/%3E%3Cellipse cx='150' cy='700' rx='300' ry='300' fill='rgba(255,255,255,0.03)'/%3E%3Cellipse cx='1350' cy='150' rx='250' ry='250' fill='rgba(243,112,33,0.05)'/%3E%3C/svg%3E");
+      background-size: cover;
+      padding: 80px 0 130px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 100%; height: 70px; background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    #hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+
+    .hero-left { color: #fff; }
+
+    .hero-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+    .hero-brand img { height: 48px; width: auto; }
+    .hero-brand-div { width: 1px; height: 44px; background: rgba(255,255,255,.25); }
+    .hero-brand-label {
+      font-family: var(--cond-font); font-size: .8rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--orange); font-weight: 700;
+    }
+
+    /* Speech bubbles decoration */
+    .hero-bubbles {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .bubble {
+      background: rgba(243,112,33,.18);
+      border: 1px solid rgba(243,112,33,.35);
+      border-radius: 20px; padding: 6px 16px;
+      font-family: var(--cond-font); font-size: .85rem; font-weight: 700;
+      color: var(--orange); letter-spacing: .03em;
+    }
+
+    .hero-left h1 {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
+      letter-spacing: -0.04em; line-height: 1.02;
+      margin-bottom: 20px; color: #fff;
+    }
+    .hero-left h1 span { color: var(--orange); }
+
+    .hero-left .hero-sub {
+      font-size: 1.05rem; line-height: 1.7;
+      color: rgba(255,255,255,.88); margin-bottom: 32px;
+    }
+
+    .hero-checks { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+    .hero-check  { display: flex; align-items: center; gap: 12px; font-size: .95rem; color: #fff; }
+    .check-icon  {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--orange); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 900; flex-shrink: 0;
+    }
+
+    /* World visual element */
+    .hero-world-card {
+      background: rgba(0,0,0,.3);
+      border: 1px solid rgba(243,112,33,.25);
+      border-radius: 20px; padding: 28px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .world-flag {
+      background: rgba(243,112,33,.12);
+      border: 1px solid rgba(243,112,33,.2);
+      border-radius: 12px; padding: 16px 12px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      text-align: center;
+    }
+    .world-flag .flag-emoji { font-size: 2rem; }
+    .world-flag .flag-text  { font-family: var(--cond-font); font-size: .78rem; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .05em; }
+    .world-flag .flag-phrase{ font-size: .82rem; color: var(--orange); font-style: italic; margin-top: 2px; }
+
+    /* Hero Form */
+    .hero-form-card {
+      background: #fff; border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.2);
+      border-top: 4px solid var(--orange);
+    }
+    .hero-form-card h2 {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: 1.6rem; letter-spacing: -0.04em;
+      color: var(--blue); margin-bottom: 6px;
+    }
+    .hero-form-card .form-sub { font-size: .88rem; color: var(--gray-text); line-height: 1.5; margin-bottom: 22px; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 12px 14px;
+      border: 1.5px solid #dde0e8; border-radius: 8px;
+      font-family: var(--body-font); font-size: .92rem; color: #333;
+      background: #fff; transition: border-color .2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--orange); }
+    .form-group input::placeholder { color: #aaa; }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F37021' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px;
+    }
+    .form-privacy { text-align: center; font-size: .75rem; color: #aaa; margin-top: 10px; }
+
+    /* SEC 2 — PROPOSTA */
+    #proposta { padding: 100px 0 80px; background: #fff; }
+    #proposta .section-title { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 8px; }
+    #proposta .prop-lead { text-align: center; font-size: 1.15rem; color: var(--orange); font-weight: 600; margin-bottom: 16px; }
+    #proposta .prop-sub { text-align: center; font-size: 1rem; color: var(--gray-text); max-width: 700px; margin: 0 auto 60px; line-height: 1.75; }
+
+    .dif-grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .dif-card {
+      background: var(--gray-bg); border-radius: 16px; padding: 28px 24px;
+      border-left: 4px solid var(--orange);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .dif-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.09); }
+    .dif-icon  { font-size: 2.2rem; margin-bottom: 12px; }
+    .dif-title { font-family: var(--title-font); font-weight: 900; font-size: 1.05rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 6px; }
+    .dif-text  { font-size: .88rem; color: var(--gray-text); line-height: 1.6; }
+
+    /* SEC 3 — METODOLOGIA */
+    #metodologia { padding: 100px 0 80px; background: var(--blue); position: relative; overflow: hidden; }
+    #metodologia::before { content: ''; position: absolute; top: -70px; left: 0; width: 100%; height: 70px; background: #fff; clip-path: ellipse(55% 100% at 50% 0%); }
+    #metodologia::after  { content: ''; position: absolute; bottom: -70px; left: 0; width: 100%; height: 70px; background: var(--gray-bg); clip-path: ellipse(55% 100% at 50% 100%); }
+
+    #metodologia .section-title { color: #fff; font-size: clamp(1.8rem, 3vw, 2.8rem); text-align: center; margin-bottom: 12px; }
+    #metodologia .met-sub { text-align: center; color: rgba(255,255,255,.8); font-size: 1rem; max-width: 700px; margin: 0 auto 64px; line-height: 1.7; }
+
+    .pilares-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 48px; }
+    .pilar-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(243,112,33,.2);
+      border-radius: 20px; padding: 36px 28px; text-align: center;
+      transition: background .2s;
+    }
+    .pilar-card:hover { background: rgba(255,255,255,.12); }
+    .pilar-num {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: rgba(243,112,33,.15);
+      border: 3px solid var(--orange);
+      box-shadow: 0 0 0 6px rgba(243,112,33,.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem; margin: 0 auto 24px;
+    }
+    .pilar-label { font-family: var(--cond-font); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.45); margin-bottom: 10px; }
+    .pilar-title { font-family: var(--title-font); font-weight: 900; font-size: 1.5rem; letter-spacing: -0.03em; color: var(--orange); margin-bottom: 12px; }
+    .pilar-text  { font-size: .93rem; color: rgba(255,255,255,.82); line-height: 1.65; }
+
+    .met-dado {
+      background: rgba(243,112,33,.12);
+      border: 1px solid rgba(243,112,33,.25);
+      border-radius: 16px; padding: 28px 36px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      flex-wrap: wrap;
+    }
+    .met-dado-text { color: rgba(255,255,255,.9); font-size: 1.1rem; font-weight: 600; }
+    .met-dado-text span { color: var(--orange); font-family: var(--title-font); font-size: 1.4rem; }
+
+    /* SEC 4 — TRILHAS */
+    #trilhas { padding: 100px 0 80px; background: var(--gray-bg); }
+    #trilhas .section-title { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 12px; }
+    #trilhas .trilhas-sub { text-align: center; color: var(--gray-text); font-size: 1rem; max-width: 620px; margin: 0 auto 56px; line-height: 1.7; }
+
+    .trilhas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 32px; }
+    .trilha-card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .trilha-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.12); }
+
+    .trilha-header {
+      padding: 24px 20px 18px;
+      background: var(--blue);
+      position: relative;
+    }
+    .trilha-header::after {
+      content: ''; position: absolute; bottom: -18px; left: 0; right: 0;
+      height: 36px; background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .trilha-name {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: 2rem; letter-spacing: -0.03em;
+      color: var(--orange); display: block; line-height: 1;
+    }
+    .trilha-faixa { font-family: var(--cond-font); font-size: .78rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+    .trilha-badge {
+      display: inline-block; margin-top: 10px;
+      background: rgba(243,112,33,.2); border: 1px solid rgba(243,112,33,.4);
+      color: var(--orange); font-size: .7rem; font-weight: 700;
+      font-family: var(--cond-font); text-transform: uppercase; letter-spacing: .05em;
+      padding: 3px 10px; border-radius: 20px;
+    }
+
+    .trilha-body { padding: 30px 20px 24px; }
+    .trilha-focus { font-size: .88rem; color: var(--gray-text); line-height: 1.65; }
+    .trilha-topics { display: flex; flex-direction: column; gap: 7px; margin-top: 14px; }
+    .trilha-topic  { display: flex; align-items: flex-start; gap: 8px; font-size: .82rem; color: var(--gray-text); }
+    .topic-dot     { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 5px; }
+
+    .trilha-cta {
+      background: var(--orange-light);
+      border: 1px solid rgba(243,112,33,.2);
+      border-radius: 16px; padding: 24px 32px;
+      text-align: center;
+    }
+    .trilha-cta p { font-size: 1rem; color: var(--blue); font-weight: 600; margin-bottom: 0; }
+    .trilha-cta strong { color: var(--orange); }
+
+    /* SEC 5 — DEPOIMENTOS */
+    #depoimentos { padding: 100px 0 80px; background: #fff; }
+    #depoimentos .section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 12px; }
+    #depoimentos .dep-sub { text-align: center; color: var(--gray-text); font-size: 1rem; margin-bottom: 56px; }
+
+    .carousel-wrapper { position: relative; overflow: hidden; }
+    .carousel-track   { display: flex; gap: 24px; transition: transform .45s cubic-bezier(.4,0,.2,1); }
+    .dep-card { background: var(--gray-bg); border-radius: 16px; padding: 28px; flex-shrink: 0; border-top: 3px solid var(--orange); }
+    .dep-stars { color: var(--orange); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .dep-text  { font-size: .93rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .dep-author { display: flex; align-items: center; gap: 12px; }
+    .dep-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; color: #fff; flex-shrink: 0; background: var(--orange); }
+    .dep-name   { font-weight: 700; font-size: .9rem; color: var(--blue); }
+    .dep-role   { font-size: .78rem; color: #aaa; font-family: var(--cond-font); }
+
+    .carousel-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 32px; }
+    .carousel-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--orange); background: #fff; color: var(--orange); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s; }
+    .carousel-btn:hover { background: var(--orange); color: #fff; }
+    .carousel-dots { display: flex; gap: 8px; }
+    .carousel-dot  { width: 8px; height: 8px; border-radius: 50%; background: #ccc; cursor: pointer; transition: background .2s, transform .2s; border: none; }
+    .carousel-dot.active { background: var(--orange); transform: scale(1.3); }
+
+    /* SEC 6 — UNIDADES */
+    #unidades { padding: 100px 0 80px; background: var(--gray-bg); }
+    #unidades .section-title { font-size: clamp(1.6rem, 2.8vw, 2.4rem); color: var(--blue); text-align: center; margin-bottom: 56px; }
+
+    .unidades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+    .unidade-card { background: #fff; border: 1.5px solid #e8eaf0; border-radius: 20px; padding: 32px; transition: box-shadow .25s, border-color .25s; }
+    .unidade-card:hover { box-shadow: 0 8px 32px rgba(12,48,108,.1); border-color: var(--orange); }
+    .unidade-name { font-family: var(--title-font); font-weight: 900; font-size: 1.4rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 16px; }
+    .unidade-info { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .unidade-row  { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; color: var(--gray-text); }
+    .unidade-row svg { flex-shrink: 0; margin-top: 2px; opacity: .6; }
+    .unidade-map  { width: 100%; height: 220px; border-radius: 12px; overflow: hidden; margin-bottom: 16px; background: var(--gray-bg); }
+    .unidade-map img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* SEC 7 — DIFERENCIAIS */
+    #diferenciais { padding: 100px 0 80px; background: #fff; }
+    #diferenciais .section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 56px; }
+
+    .dif3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .dif3-card {
+      background: var(--gray-bg); border-radius: 16px; padding: 32px 28px;
+      transition: transform .25s, box-shadow .25s;
+      border-bottom: 3px solid transparent;
+    }
+    .dif3-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.09); border-bottom-color: var(--orange); }
+    .dif3-icon  { font-size: 2.4rem; margin-bottom: 14px; }
+    .dif3-title { font-family: var(--title-font); font-weight: 900; font-size: 1.15rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 8px; }
+    .dif3-text  { font-size: .9rem; color: var(--gray-text); line-height: 1.65; }
+
+    /* SEC 8 — CTA FINAL */
+    #cta-final { background: var(--blue); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+    #cta-final::before { content: ''; position: absolute; top: -70px; left: 0; width: 100%; height: 70px; background: #fff; clip-path: ellipse(55% 100% at 50% 0%); }
+    .orb { position: absolute; border-radius: 50%; pointer-events: none; }
+    .orb-1 { width: 600px; height: 600px; background: rgba(243,112,33,.06); top: -200px; right: -150px; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(243,112,33,.04); bottom: -150px; left: -100px; }
+
+    #cta-final .section-title { font-size: clamp(2rem, 4vw, 3.4rem); color: #fff; margin-bottom: 16px; position: relative; }
+    #cta-final .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.82); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+
+    .cta-final-form { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 40px 36px; box-shadow: 0 16px 56px rgba(0,0,0,.25); position: relative; border-top: 4px solid var(--orange); }
+    .cta-final-form h3 { font-family: var(--title-font); font-weight: 900; font-size: 1.6rem; letter-spacing: -0.04em; color: var(--blue); margin-bottom: 6px; }
+    .cta-final-form .form-sub { font-size: .88rem; color: var(--gray-text); margin-bottom: 22px; line-height: 1.5; }
+
+    /* FOOTER */
+    #footer { background: #09224e; color: rgba(255,255,255,.7); padding: 60px 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand .footer-logo { height: 40px; margin-bottom: 16px; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 20px; }
+    .social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background .2s; color: #fff; }
+    .social-link:hover { background: var(--orange); color: #fff; }
+    .social-link svg { width: 18px; height: 18px; }
+    .footer-col h4 { color: #fff; font-family: var(--cond-font); font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--orange); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .8rem; }
+    .footer-bottom a:hover { color: var(--orange); }
+
+    /* WHATSAPP */
+    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,.25); text-decoration: none; transition: transform .2s; }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .dif-grid-6   { grid-template-columns: repeat(2, 1fr); }
+      .dif3-grid    { grid-template-columns: repeat(2, 1fr); }
+      .trilhas-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top   { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 960px) {
+      #hero { padding: 60px 0 110px; }
+      #hero .container { grid-template-columns: 1fr; }
+      .hero-left { text-align: center; }
+      .hero-brand { justify-content: center; }
+      .hero-bubbles { justify-content: center; }
+      .hero-checks  { align-items: center; }
+      #proposta, #depoimentos, #unidades, #diferenciais, #cta-final,
+      #metodologia, #trilhas { padding-top: 72px; padding-bottom: 56px; }
+      .pilares-grid { grid-template-columns: 1fr; gap: 20px; }
+      .trilhas-grid { grid-template-columns: repeat(2, 1fr); }
+      .unidades-grid { grid-template-columns: 1fr; }
+      .met-dado { flex-direction: column; text-align: center; gap: 16px; }
+    }
+    @media (max-width: 640px) {
+      #site-header nav { display: none; }
+      #site-header nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--blue); padding: 20px 24px; gap: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.2); z-index: 99; }
+      .hamburger { display: flex; }
+      .container  { padding: 0 16px; }
+      #hero { padding: 40px 0 100px; }
+      #proposta, #depoimentos, #unidades, #diferenciais, #cta-final,
+      #metodologia, #trilhas { padding-top: 56px; padding-bottom: 40px; }
+      .dif-grid-6   { grid-template-columns: 1fr; }
+      .dif3-grid    { grid-template-columns: 1fr; }
+      .trilhas-grid { grid-template-columns: 1fr; }
+      .hero-form-card  { padding: 24px 16px; }
+      .cta-final-form  { padding: 28px 16px; }
+      .footer-top      { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom   { flex-direction: column; align-items: flex-start; }
+      .hero-world-card { display: none; }
+    }
+    @media (max-width: 400px) {
+      .container { padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="logo/logo_branco.png" alt="Happy Brasília" />
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="#proposta">Por que o English?</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#trilhas">Trilhas</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#contato" class="nav-cta">Garantir vaga</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SEC 1: HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-left">
+      <div class="hero-brand">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" />
+        <div class="hero-brand-div"></div>
+        <span class="hero-brand-label">&#127758; Happy English · Brasília</span>
+      </div>
+
+      <div class="hero-bubbles">
+        <span class="bubble">Hello!</span>
+        <span class="bubble">How are you?</span>
+        <span class="bubble">Let's go!</span>
+        <span class="bubble">I can do it!</span>
+      </div>
+
+      <h1>O inglês que <span>abre portas:</span> do primeiro hello ao mundo todo.</h1>
+
+      <p class="hero-sub">
+        No Happy English, crianças e jovens de 5 a 17 anos aprendem inglês de verdade, com fluência, confiança e do jeito Happy: divertido, prático e cheio de propósito.
+      </p>
+
+      <div class="hero-checks">
+        <div class="hero-check">
+          <span class="check-icon">&#10003;</span>
+          <span>Inglês do letramento à fluência: para cada fase</span>
+        </div>
+        <div class="hero-check">
+          <span class="check-icon">&#10003;</span>
+          <span>Turmas para crianças e jovens de 5 a 17+ anos</span>
+        </div>
+        <div class="hero-check">
+          <span class="check-icon">&#10003;</span>
+          <span>Unidades em Brasília: Asa Sul e Asa Norte</span>
+        </div>
+      </div>
+
+      <div class="hero-world-card">
+        <div class="world-flag">
+          <span class="flag-emoji">&#127482;&#127480;</span>
+          <span class="flag-text">Estados Unidos</span>
+          <span class="flag-phrase">"Amazing!"</span>
+        </div>
+        <div class="world-flag">
+          <span class="flag-emoji">&#127468;&#127463;</span>
+          <span class="flag-text">Reino Unido</span>
+          <span class="flag-phrase">"Brilliant!"</span>
+        </div>
+        <div class="world-flag">
+          <span class="flag-emoji">&#127462;&#127482;</span>
+          <span class="flag-text">Austrália</span>
+          <span class="flag-phrase">"No worries!"</span>
+        </div>
+        <div class="world-flag">
+          <span class="flag-emoji">&#127464;&#127462;</span>
+          <span class="flag-text">Canadá</span>
+          <span class="flag-phrase">"Awesome!"</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="hero-form-card" id="contato">
+      <h2>Garanta a vaga do seu filho!</h2>
+      <p class="form-sub">Preencha e nossa equipe entra em contato!</p>
+
+      <form id="form-hero" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <input type="text" name="nome_responsavel" placeholder="Nome do responsável *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="nome_crianca" placeholder="Nome da criança/jovem *" required />
+        </div>
+        <div class="form-group">
+          <input type="number" name="idade" placeholder="Idade da criança *" min="3" max="25" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="E-mail *" required />
+        </div>
+        <div class="form-group">
+          <select name="unidade" required>
+            <option value="" disabled selected>Unidade de interesse *</option>
+            <option value="Asa Sul">Asa Sul</option>
+            <option value="Asa Norte">Asa Norte</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-orange btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
+          QUERO SER HAPPY ENGLISH!
+        </button>
+        <p class="form-privacy">&#128274; Seus dados estão seguros. Não enviamos spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 2: PROPOSTA DE VALOR -->
+<section id="proposta">
+  <div class="container">
+    <h2 class="section-title fade-in">Inglês não é mais diferencial. É o básico do futuro.</h2>
+    <p class="prop-lead fade-in">E aprender cedo faz toda a diferença.</p>
+    <p class="prop-sub fade-in">
+      Crianças que aprendem inglês desde pequenas têm muito mais facilidade de alcançar fluência, e mais segurança para se comunicar com o mundo. No Happy English, o seu filho aprende brincando, vivenciando e praticando de verdade, com uma metodologia que respeita o ritmo de cada faixa etária.
+    </p>
+
+    <div class="dif-grid-6">
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#127758;</div>
+        <div class="dif-title">Liberdade para se comunicar no mundo</div>
+        <p class="dif-text">Inglês de verdade: seu filho fala, entende e se expressa com confiança em qualquer lugar.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#127918;</div>
+        <div class="dif-title">Aprendizado divertido e real</div>
+        <p class="dif-text">Brincadeiras, desafios e conversação real: o inglês entra na vida de forma natural e prazerosa.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#129504;</div>
+        <div class="dif-title">Memória e criatividade junto com o idioma</div>
+        <p class="dif-text">Aprender outro idioma na infância desenvolve o cérebro de forma integral, muito além das palavras.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#129309;</div>
+        <div class="dif-title">Competências socioemocionais integradas</div>
+        <p class="dif-text">Empatia, respeito à diversidade e autoconfiança ganham força junto com o inglês.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#128218;</div>
+        <div class="dif-title">Trilhas por faixa etária: do letramento à fluência</div>
+        <p class="dif-text">4 anos de formação continuada com conteúdo pensado para cada etapa da vida do seu filho.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#128640;</div>
+        <div class="dif-title">Metodologia que desperta o desejo de comunicar</div>
+        <p class="dif-text">Nada de gramática decorada: aqui o aluno quer falar inglês porque entende o porquê.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 3: METODOLOGIA -->
+<section id="metodologia">
+  <div class="container">
+    <h2 class="section-title fade-in">Como é uma aula de Happy English?</h2>
+    <p class="met-sub fade-in">
+      Nossa metodologia coloca o aluno no centro: aprendendo inglês por meio de relações, vivências e muita diversão. Nada de repetição mecânica — aqui o idioma faz sentido na vida real do seu filho.
+    </p>
+
+    <div class="pilares-grid">
+      <div class="pilar-card fade-in">
+        <div class="pilar-num">&#127757;</div>
+        <div class="pilar-label">Pilar 1</div>
+        <div class="pilar-title">Vivência</div>
+        <p class="pilar-text">O aluno é exposto ao inglês em situações reais e relevantes para a sua faixa etária: do cotidiano às questões globais.</p>
+      </div>
+      <div class="pilar-card fade-in">
+        <div class="pilar-num">&#127919;</div>
+        <div class="pilar-label">Pilar 2</div>
+        <div class="pilar-title">Prática</div>
+        <p class="pilar-text">Todo conteúdo aprendido é colocado em uso: na fala, na escrita e na compreensão, com desafios frequentes que fixam o idioma para a vida.</p>
+      </div>
+      <div class="pilar-card fade-in">
+        <div class="pilar-num">&#128170;</div>
+        <div class="pilar-label">Pilar 3</div>
+        <div class="pilar-title">Confiança</div>
+        <p class="pilar-text">O foco é desenvolver autoestima e segurança para se comunicar em inglês com fluidez, sem medo de errar.</p>
+      </div>
+    </div>
+
+    <div class="met-dado fade-in">
+      <div class="met-dado-text">
+        Curso com duração de <span>4 anos</span> &nbsp;&#183;&nbsp; Trilhas por faixa etária &nbsp;&#183;&nbsp; Do letramento à conversação fluente
+      </div>
+      <a href="#contato" class="btn btn-orange">QUERO SABER MAIS</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 4: TRILHAS POR FAIXA ETÁRIA -->
+<section id="trilhas">
+  <div class="container">
+    <h2 class="section-title fade-in">Um curso para cada fase do seu filho</h2>
+    <p class="trilhas-sub fade-in">
+      O Happy English tem trilhas pensadas para respeitar o momento de aprendizado de cada criança e jovem. Pode começar do zero em qualquer idade.
+    </p>
+
+    <div class="trilhas-grid">
+      <div class="trilha-card fade-in">
+        <div class="trilha-header">
+          <span class="trilha-name">Junior</span>
+          <div class="trilha-faixa">5 a 9 anos</div>
+          <span class="trilha-badge">Nível 1</span>
+        </div>
+        <div class="trilha-body">
+          <p class="trilha-focus">Letramento em inglês, compreensão oral e primeiras falas, aprendizado lúdico e cheio de brincadeiras.</p>
+          <div class="trilha-topics">
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Compreensão oral e vocabulário</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Músicas, jogos e histórias</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Primeiras falas com confiança</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trilha-card fade-in">
+        <div class="trilha-header">
+          <span class="trilha-name">Teens</span>
+          <div class="trilha-faixa">10 a 12 anos</div>
+          <span class="trilha-badge">Nível 2</span>
+        </div>
+        <div class="trilha-body">
+          <p class="trilha-focus">Produção escrita e comunicação oral a partir de temas da vida do aluno: fala com propósito e identidade.</p>
+          <div class="trilha-topics">
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Fala e escrita com propósito</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Temas do cotidiano do aluno</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Conversação e expressão oral</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trilha-card fade-in">
+        <div class="trilha-header">
+          <span class="trilha-name">Starter</span>
+          <div class="trilha-faixa">12 a 16 anos</div>
+          <span class="trilha-badge">Nível 3</span>
+        </div>
+        <div class="trilha-body">
+          <p class="trilha-focus">As 4 habilidades do idioma (fala, escuta, leitura e escrita) com temas relevantes para a adolescência.</p>
+          <div class="trilha-topics">
+            <div class="trilha-topic"><span class="topic-dot"></span><span>As 4 habilidades integradas</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Temas para adolescentes</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Preparação para o mundo real</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trilha-card fade-in">
+        <div class="trilha-header">
+          <span class="trilha-name">Progress</span>
+          <div class="trilha-faixa">17+ anos</div>
+          <span class="trilha-badge">Nível 4</span>
+        </div>
+        <div class="trilha-body">
+          <p class="trilha-focus">Foco em conversação fluente, vocabulário expandido e comunicação em situações cotidianas reais.</p>
+          <div class="trilha-topics">
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Fluência e vocabulário avançado</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Comunicação em situações reais</span></div>
+            <div class="trilha-topic"><span class="topic-dot"></span><span>Confiança total para o mundo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trilha-cta fade-in">
+      <p>&#128161; <strong>São 4 anos de formação continuada.</strong> Quanto mais cedo começar, mais longe o seu filho chega!</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 5: DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <h2 class="section-title fade-in">O que os pais estão dizendo</h2>
+    <p class="dep-sub fade-in">Depoimentos reais de famílias que já vivem a experiência Happy English.</p>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track">
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Minha filha de 7 anos já canta músicas em inglês, entende séries sem legenda e não tem vergonha nenhuma de falar. A metodologia da Happy é incrível: ela aprende sorrindo, sem perceber que está estudando!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar">R</div>
+            <div>
+              <div class="dep-name">Rodrigo Almeida</div>
+              <div class="dep-role">Pai da Sofia, 7 anos · Happy English Brasília</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Em 6 meses meu filho já conversa em inglês sem travar. A metodologia é completamente diferente do que eu já vi: ele aprende de verdade, não decora. A confiança dele cresceu muito!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar">M</div>
+            <div>
+              <div class="dep-name">Marcos Alves</div>
+              <div class="dep-role">Pai do Pedro, 11 anos · Happy English Brasília</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Minha filha era tímida para falar em qualquer língua. Hoje ela não só fala inglês, mas se expressa com confiança. A Happy trabalhou a autoestima dela de uma forma que nenhuma escola tradicional fez."</p>
+          <div class="dep-author">
+            <div class="dep-avatar">C</div>
+            <div>
+              <div class="dep-name">Camila Rocha</div>
+              <div class="dep-role">Mãe da Laura, 9 anos · Happy English Brasília</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"A Happy English mudou a relação do meu filho com o inglês. Antes ele tinha pavor da matéria na escola. Hoje ele pede pra assistir filmes sem legenda. É outra criança!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar">A</div>
+            <div>
+              <div class="dep-name">Ana Beatriz Costa</div>
+              <div class="dep-role">Mãe do Davi, 10 anos · Happy English Brasília</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">&#8592;</button>
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <button class="carousel-btn" id="carousel-next" aria-label="Próximo">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 6: UNIDADES -->
+<section id="unidades">
+  <div class="container">
+    <h2 class="section-title fade-in">Happy English em Brasília: perto de você</h2>
+
+    <div class="unidades-grid">
+      <div class="unidade-card fade-in">
+        <div class="unidade-name">Happy English: Asa Sul</div>
+        <div class="unidade-info">
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Endereço a confirmar, Asa Sul, Brasília, DF</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            <span>A confirmar</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Horário a confirmar</span>
+          </div>
+        </div>
+        <div class="unidade-map">
+          <img src="img/unidade-asa-sul.jpeg" alt="Happy English Asa Sul" />
+        </div>
+        <a href="https://wa.me/5561999999999" target="_blank" class="btn btn-orange btn-full">
+          FALAR COM ESTA UNIDADE
+        </a>
+      </div>
+
+      <div class="unidade-card fade-in">
+        <div class="unidade-name">Happy English: Asa Norte</div>
+        <div class="unidade-info">
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Endereço a confirmar, Asa Norte, Brasília, DF</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            <span>A confirmar</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Horário a confirmar</span>
+          </div>
+        </div>
+        <div class="unidade-map">
+          <img src="img/unidade-asa-norte.webp" alt="Happy English Asa Norte" />
+        </div>
+        <a href="https://wa.me/5561999999999" target="_blank" class="btn btn-orange btn-full">
+          FALAR COM ESTA UNIDADE
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 7: DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="container">
+    <h2 class="section-title fade-in">Por que escolher o Happy English?</h2>
+
+    <div class="dif3-grid">
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#127942;</div>
+        <div class="dif3-title">Hub educacional completo</div>
+        <p class="dif3-text">Além do inglês, seu filho pode aprender programação, educação financeira e comunicação: tudo no mesmo lugar.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#128218;</div>
+        <div class="dif3-title">Metodologia ativa e própria</div>
+        <p class="dif3-text">Aprendizado por vivências, não por repetição. O inglês entra na vida real do seu filho de forma natural.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#128104;&#8205;&#127979;</div>
+        <div class="dif3-title">Professores treinados e apaixonados</div>
+        <p class="dif3-text">Equipe especializada, focada no desenvolvimento integral do aluno, não só no idioma.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#127919;</div>
+        <div class="dif3-title">4 trilhas por faixa etária</div>
+        <p class="dif3-text">Conteúdo adaptado para cada momento: do primeiro contato com o inglês até a fluência completa.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#128205;</div>
+        <div class="dif3-title">Presença local em Brasília</div>
+        <p class="dif3-text">Atendimento próximo, humanizado e comprometido com o desenvolvimento da sua cidade.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#127775;</div>
+        <div class="dif3-title">Mais de 80 mil alunos formados</div>
+        <p class="dif3-text">Marca premiada: ABF, Great Place to Work, Excelência em Franchising. Referência nacional em educação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 8: CTA FINAL -->
+<section id="cta-final">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="container">
+    <h2 class="section-title fade-in">O mundo inteiro esperando pelo seu filho.</h2>
+    <p class="cta-sub fade-in">As vagas são limitadas. Garanta hoje a matrícula no Happy English e dê ao seu filho a liberdade de se comunicar, e conquistar, onde quiser.</p>
+
+    <div class="cta-final-form fade-in">
+      <h3>Garanta a vaga do seu filho!</h3>
+      <p class="form-sub">Preencha e nossa equipe entra em contato!</p>
+
+      <form id="form-final" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <input type="text" name="nome_responsavel" placeholder="Nome do responsável *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="nome_crianca" placeholder="Nome da criança/jovem *" required />
+        </div>
+        <div class="form-group">
+          <input type="number" name="idade" placeholder="Idade da criança *" min="3" max="25" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="E-mail *" required />
+        </div>
+        <div class="form-group">
+          <select name="unidade" required>
+            <option value="" disabled selected>Unidade de interesse *</option>
+            <option value="Asa Sul">Asa Sul</option>
+            <option value="Asa Norte">Asa Norte</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-orange btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
+          QUERO GARANTIR A VAGA AGORA
+        </button>
+        <p class="form-privacy">&#128274; Seus dados estão seguros. Não enviamos spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 9: FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" class="footer-logo" />
+        <p>Happy English Brasília: inglês de verdade para crianças e jovens de 5 a 17+ anos. Do primeiro hello ao mundo todo.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/happybrasilia" target="_blank" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://facebook.com/happybrasilia" target="_blank" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/5561999999999" target="_blank" class="social-link" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">&#8592; Voltar para Happy Brasília</a></li>
+          <li><a href="#proposta">Por que o English?</a></li>
+          <li><a href="#metodologia">Metodologia</a></li>
+          <li><a href="#trilhas">Trilhas</a></li>
+          <li><a href="#unidades">Unidades</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://instagram.com/happybrasilia" target="_blank">@happybrasilia</a></li>
+          <li><a href="https://wa.me/5561999999999" target="_blank">WhatsApp</a></li>
+          <li><a href="https://happybrasilia.com" target="_blank">happybrasilia.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&#169; 2025 Happy Brasília. Todos os direitos reservados.</p>
+      <a href="#">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5561999999999" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  /* HAMBURGER */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav').classList.toggle('open');
+  });
+
+  /* FADE IN */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* CAROUSEL */
+  const track = document.getElementById('carousel-track');
+  const wrapper = track.parentElement;
+  const dotsContainer = document.getElementById('carousel-dots');
+  const cards = track.querySelectorAll('.dep-card');
+  const GAP = 24;
+  let currentIndex = 0;
+
+  function getVisible() { return window.innerWidth < 640 ? 1 : window.innerWidth < 960 ? 2 : 3; }
+  function getTotalSlides() { return Math.ceil(cards.length / getVisible()); }
+  function getCardWidth() { return (wrapper.offsetWidth - GAP * (getVisible() - 1)) / getVisible(); }
+
+  function setCardWidths() {
+    const w = getCardWidth();
+    cards.forEach(c => { c.style.width = w + 'px'; });
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < getTotalSlides(); i++) {
+      const d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    const total = getTotalSlides();
+    currentIndex = Math.max(0, Math.min(index, total - 1));
+    track.style.transform = 'translateX(-' + (currentIndex * getVisible() * (getCardWidth() + GAP)) + 'px)';
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+
+  document.getElementById('carousel-prev').addEventListener('click', () => goTo(currentIndex - 1));
+  document.getElementById('carousel-next').addEventListener('click', () => goTo(currentIndex + 1));
+
+  setCardWidths(); buildDots();
+  window.addEventListener('resize', () => { setCardWidths(); buildDots(); goTo(0); });
+  setInterval(() => goTo((currentIndex + 1) % getTotalSlides()), 5000);
+
+  /* FORM */
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    /*
+      TODO: fbq('track', 'Lead');
+      TODO: gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXX/XXXXXXXX' });
+    */
+    const btn = e.target.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
+    btn.textContent = 'Enviado! Entraremos em contato.';
+    btn.style.background = '#28a745';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+    e.target.reset();
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 5000);
+  }
+</script>
+
+</body>
+</html>

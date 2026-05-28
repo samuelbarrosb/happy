@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Speech Brasília | Oratória e Comunicação para Jovens de 10 a 17 Anos</title>
+  <meta name="description" content="Desenvolva a comunicação e a confiança do seu filho com o Happy Speech em Brasília. Jovens de 10 a 17 anos aprendem oratória, empatia e inteligência emocional. Garanta a vaga!" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'Kobe';
+      src: url('fonte/Kobe11-Black.woff2') format('woff2'),
+           url('fonte/Kobe11-Black.woff') format('woff'),
+           url('fonte/Kobe11-Black.ttf') format('truetype');
+      font-weight: 900; font-style: normal; font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #0C306C;
+      --red:        #DD3736;
+      --red-dark:   #911414;
+      --red-light:  #FDEAEA;
+      --white:      #FFFFFF;
+      --gray-bg:    #F5F6FA;
+      --gray-text:  #555;
+      --title-font: 'Kobe', 'Arial Black', Impact, sans-serif;
+      --body-font:  'Roboto', Arial, sans-serif;
+      --cond-font:  'Roboto Condensed', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body  { font-family: var(--body-font); color: #333; background: #fff; overflow-x: hidden; }
+    img   { max-width: 100%; display: block; }
+
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    .section-title {
+      font-family: var(--title-font);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .btn {
+      display: inline-block; padding: 16px 32px; border-radius: 8px;
+      font-family: var(--body-font); font-weight: 700; font-size: 1rem;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: transform .2s, box-shadow .2s; text-align: center;
+    }
+    .btn:hover  { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+    .btn:active { transform: translateY(0); }
+    .btn-red  { background: var(--red);  color: #fff; }
+    .btn-blue { background: var(--blue); color: #fff; }
+    .btn-full { width: 100%; display: block; }
+
+    /* HEADER */
+    #site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--blue); padding: 12px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    #site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    #site-header .logo img  { height: 44px; width: auto; }
+    #site-header nav        { display: flex; gap: 28px; align-items: center; }
+    #site-header nav a      { color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .2s; }
+    #site-header nav a:hover { color: var(--red); }
+    #site-header .nav-cta   { background: var(--red); color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 700 !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      background-color: var(--blue);
+      background-image:
+        radial-gradient(circle at 10% 80%, rgba(221,55,54,.18) 0%, transparent 55%),
+        radial-gradient(circle at 90% 10%, rgba(221,55,54,.12) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='820'%3E%3Ccircle cx='720' cy='410' r='560' fill='none' stroke='rgba(221,55,54,0.06)' stroke-width='90'/%3E%3Ccircle cx='720' cy='410' r='350' fill='none' stroke='rgba(221,55,54,0.04)' stroke-width='55'/%3E%3Cellipse cx='180' cy='690' rx='270' ry='270' fill='rgba(255,255,255,0.03)'/%3E%3Cellipse cx='1320' cy='170' rx='230' ry='230' fill='rgba(221,55,54,0.05)'/%3E%3C/svg%3E");
+      background-size: cover;
+      padding: 80px 0 130px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 100%; height: 70px; background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    #hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+
+    .hero-left { color: #fff; }
+
+    .hero-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+    .hero-brand img { height: 48px; width: auto; }
+    .hero-brand-div { width: 1px; height: 44px; background: rgba(255,255,255,.25); }
+    .hero-brand-label {
+      font-family: var(--cond-font); font-size: .8rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--red); font-weight: 700;
+    }
+
+    /* Quote decoration */
+    .hero-quote {
+      background: rgba(221,55,54,.15);
+      border-left: 3px solid var(--red);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      color: rgba(255,255,255,.9);
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .hero-quote span { color: var(--red); font-style: normal; font-weight: 700; font-size: 1.6rem; font-family: var(--title-font); letter-spacing: -0.03em; }
+
+    .hero-left h1 {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
+      letter-spacing: -0.04em; line-height: 1.02;
+      margin-bottom: 20px; color: #fff;
+    }
+    .hero-left h1 span { color: var(--red); }
+
+    .hero-left .hero-sub { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,.88); margin-bottom: 32px; }
+
+    .hero-checks { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+    .hero-check  { display: flex; align-items: center; gap: 12px; font-size: .95rem; color: #fff; }
+    .check-icon  {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 900; flex-shrink: 0;
+    }
+
+    /* Mic visual element */
+    .hero-mic-card {
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(221,55,54,.22);
+      border-radius: 20px; padding: 24px;
+    }
+    .mic-card-title {
+      font-family: var(--cond-font); font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--red); margin-bottom: 16px; font-weight: 700;
+    }
+    .mic-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .mic-stat {
+      background: rgba(221,55,54,.1);
+      border: 1px solid rgba(221,55,54,.18);
+      border-radius: 12px; padding: 14px;
+      text-align: center;
+    }
+    .mic-stat-num  { font-family: var(--title-font); font-size: 1.9rem; letter-spacing: -0.04em; color: var(--red); line-height: 1; }
+    .mic-stat-text { font-size: .72rem; color: rgba(255,255,255,.7); font-family: var(--cond-font); text-transform: uppercase; letter-spacing: .04em; margin-top: 4px; }
+
+    /* Hero Form */
+    .hero-form-card {
+      background: #fff; border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.2);
+      border-top: 4px solid var(--red);
+    }
+    .hero-form-card h2 {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: 1.6rem; letter-spacing: -0.04em;
+      color: var(--blue); margin-bottom: 6px;
+    }
+    .hero-form-card .form-sub { font-size: .88rem; color: var(--gray-text); line-height: 1.5; margin-bottom: 22px; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 12px 14px;
+      border: 1.5px solid #dde0e8; border-radius: 8px;
+      font-family: var(--body-font); font-size: .92rem; color: #333;
+      background: #fff; transition: border-color .2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--red); }
+    .form-group input::placeholder { color: #aaa; }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23DD3736' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px;
+    }
+    .form-privacy { text-align: center; font-size: .75rem; color: #aaa; margin-top: 10px; }
+
+    /* SEC 2 — PROPOSTA */
+    #proposta { padding: 100px 0 80px; background: #fff; }
+    #proposta .prop-stat {
+      text-align: center;
+      font-family: var(--title-font); font-weight: 900;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      letter-spacing: -0.04em; color: var(--blue);
+      margin-bottom: 8px;
+    }
+    #proposta .prop-stat span { color: var(--red); }
+    #proposta .prop-lead { text-align: center; font-size: 1.15rem; color: var(--gray-text); font-style: italic; margin-bottom: 20px; }
+    #proposta .prop-sub  { text-align: center; font-size: 1rem; color: var(--gray-text); max-width: 700px; margin: 0 auto 60px; line-height: 1.75; }
+
+    .dif-grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .dif-card {
+      background: var(--gray-bg); border-radius: 16px; padding: 28px 24px;
+      border-left: 4px solid var(--red);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .dif-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.09); }
+    .dif-icon  { font-size: 2.2rem; margin-bottom: 12px; }
+    .dif-title { font-family: var(--title-font); font-weight: 900; font-size: 1.05rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 6px; }
+    .dif-text  { font-size: .88rem; color: var(--gray-text); line-height: 1.6; }
+
+    /* SEC 3 — METODOLOGIA */
+    #metodologia { padding: 100px 0 80px; background: var(--blue); position: relative; overflow: hidden; }
+    #metodologia::before { content: ''; position: absolute; top: -70px; left: 0; width: 100%; height: 70px; background: #fff; clip-path: ellipse(55% 100% at 50% 0%); }
+    #metodologia::after  { content: ''; position: absolute; bottom: -70px; left: 0; width: 100%; height: 70px; background: var(--gray-bg); clip-path: ellipse(55% 100% at 50% 100%); }
+
+    #metodologia .section-title { color: #fff; font-size: clamp(1.8rem, 3vw, 2.8rem); text-align: center; margin-bottom: 12px; }
+    #metodologia .met-sub { text-align: center; color: rgba(255,255,255,.8); font-size: 1rem; max-width: 680px; margin: 0 auto 64px; line-height: 1.7; }
+
+    .let-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; margin-bottom: 48px; }
+    .let-steps::before {
+      content: ''; position: absolute;
+      top: 44px; left: calc(16.66% + 24px); right: calc(16.66% + 24px);
+      height: 3px; background: linear-gradient(90deg, var(--red), rgba(221,55,54,.4), var(--red));
+      z-index: 0;
+    }
+    .let-step { text-align: center; padding: 0 32px; position: relative; z-index: 1; }
+    .let-step-num {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: rgba(221,55,54,.12);
+      border: 3px solid var(--red);
+      box-shadow: 0 0 0 6px rgba(221,55,54,.07);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; margin: 0 auto 24px;
+    }
+    .let-step h3 { font-family: var(--title-font); font-weight: 900; font-size: 1.4rem; letter-spacing: -0.03em; color: var(--red); margin-bottom: 10px; }
+    .let-step-label { font-family: var(--cond-font); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.45); margin-bottom: 12px; }
+    .let-step p { font-size: .93rem; color: rgba(255,255,255,.82); line-height: 1.65; }
+
+    .met-dado {
+      background: rgba(221,55,54,.1);
+      border: 1px solid rgba(221,55,54,.22);
+      border-radius: 16px; padding: 28px 36px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      flex-wrap: wrap;
+    }
+    .met-dado-text { color: rgba(255,255,255,.9); font-size: 1.1rem; font-weight: 600; }
+    .met-dado-text span { color: var(--red); font-family: var(--title-font); font-size: 1.4rem; }
+
+    /* SEC 4 — TRANSFORMAÇÃO */
+    #transformacao { padding: 100px 0 80px; background: var(--gray-bg); }
+    #transformacao .section-title { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 12px; }
+    #transformacao .transf-sub { text-align: center; color: var(--gray-text); font-size: 1rem; max-width: 640px; margin: 0 auto 56px; line-height: 1.7; font-style: italic; }
+
+    .transf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 28px; }
+
+    .transf-col { border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+
+    .transf-col-header {
+      padding: 20px 28px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .transf-col.antes .transf-col-header { background: var(--red); }
+    .transf-col.depois .transf-col-header { background: var(--blue); }
+
+    .transf-col-header-icon { font-size: 1.6rem; }
+    .transf-col-header-title {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: 1.3rem; letter-spacing: -0.03em; color: #fff;
+    }
+
+    .transf-items { background: #fff; padding: 8px 0; }
+    .transf-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 28px; font-size: .93rem; color: var(--gray-text);
+      border-bottom: 1px solid #f0f0f0;
+      transition: background .15s;
+    }
+    .transf-item:last-child { border-bottom: none; }
+    .transf-item:hover { background: var(--gray-bg); }
+    .transf-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .transf-col.antes  .transf-dot { background: var(--red); }
+    .transf-col.depois .transf-dot { background: var(--blue); }
+
+    .transf-cta {
+      background: var(--red-light);
+      border: 1px solid rgba(221,55,54,.2);
+      border-radius: 16px; padding: 24px 32px;
+      text-align: center;
+    }
+    .transf-cta p { font-size: 1rem; color: var(--blue); font-weight: 600; }
+
+    /* SEC 5 — DEPOIMENTOS */
+    #depoimentos { padding: 100px 0 80px; background: #fff; }
+    #depoimentos .section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 12px; }
+    #depoimentos .dep-sub { text-align: center; color: var(--gray-text); font-size: 1rem; margin-bottom: 56px; }
+
+    .carousel-wrapper { position: relative; overflow: hidden; }
+    .carousel-track   { display: flex; gap: 24px; transition: transform .45s cubic-bezier(.4,0,.2,1); }
+    .dep-card { background: var(--gray-bg); border-radius: 16px; padding: 28px; flex-shrink: 0; border-top: 3px solid var(--red); }
+    .dep-stars { color: var(--red); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .dep-text  { font-size: .93rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .dep-author { display: flex; align-items: center; gap: 12px; }
+    .dep-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; color: #fff; flex-shrink: 0; background: var(--red); }
+    .dep-name   { font-weight: 700; font-size: .9rem; color: var(--blue); }
+    .dep-role   { font-size: .78rem; color: #aaa; font-family: var(--cond-font); }
+
+    .carousel-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 32px; }
+    .carousel-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--red); background: #fff; color: var(--red); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s; }
+    .carousel-btn:hover { background: var(--red); color: #fff; }
+    .carousel-dots { display: flex; gap: 8px; }
+    .carousel-dot  { width: 8px; height: 8px; border-radius: 50%; background: #ccc; cursor: pointer; transition: background .2s, transform .2s; border: none; }
+    .carousel-dot.active { background: var(--red); transform: scale(1.3); }
+
+    /* SEC 6 — UNIDADES */
+    #unidades { padding: 100px 0 80px; background: var(--gray-bg); }
+    #unidades .section-title { font-size: clamp(1.6rem, 2.8vw, 2.4rem); color: var(--blue); text-align: center; margin-bottom: 56px; }
+
+    .unidades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+    .unidade-card { background: #fff; border: 1.5px solid #e8eaf0; border-radius: 20px; padding: 32px; transition: box-shadow .25s, border-color .25s; }
+    .unidade-card:hover { box-shadow: 0 8px 32px rgba(12,48,108,.1); border-color: var(--red); }
+    .unidade-name { font-family: var(--title-font); font-weight: 900; font-size: 1.4rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 16px; }
+    .unidade-info { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .unidade-row  { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; color: var(--gray-text); }
+    .unidade-row svg { flex-shrink: 0; margin-top: 2px; opacity: .6; }
+    .unidade-map  { width: 100%; height: 220px; border-radius: 12px; overflow: hidden; margin-bottom: 16px; }
+    .unidade-map img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* SEC 7 — DIFERENCIAIS */
+    #diferenciais { padding: 100px 0 80px; background: #fff; }
+    #diferenciais .section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 56px; }
+
+    .dif3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .dif3-card {
+      background: var(--gray-bg); border-radius: 16px; padding: 32px 28px;
+      transition: transform .25s, box-shadow .25s;
+      border-bottom: 3px solid transparent;
+    }
+    .dif3-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.09); border-bottom-color: var(--red); }
+    .dif3-icon  { font-size: 2.4rem; margin-bottom: 14px; }
+    .dif3-title { font-family: var(--title-font); font-weight: 900; font-size: 1.15rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 8px; }
+    .dif3-text  { font-size: .9rem; color: var(--gray-text); line-height: 1.65; }
+
+    /* SEC 8 — CTA FINAL */
+    #cta-final { background: var(--blue); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+    #cta-final::before { content: ''; position: absolute; top: -70px; left: 0; width: 100%; height: 70px; background: #fff; clip-path: ellipse(55% 100% at 50% 0%); }
+    .orb { position: absolute; border-radius: 50%; pointer-events: none; }
+    .orb-1 { width: 600px; height: 600px; background: rgba(221,55,54,.07); top: -200px; right: -150px; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(221,55,54,.04); bottom: -150px; left: -100px; }
+
+    #cta-final .section-title { font-size: clamp(2rem, 4vw, 3.4rem); color: #fff; margin-bottom: 16px; position: relative; }
+    #cta-final .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.82); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+
+    .cta-final-form { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 40px 36px; box-shadow: 0 16px 56px rgba(0,0,0,.25); position: relative; border-top: 4px solid var(--red); }
+    .cta-final-form h3 { font-family: var(--title-font); font-weight: 900; font-size: 1.6rem; letter-spacing: -0.04em; color: var(--blue); margin-bottom: 6px; }
+    .cta-final-form .form-sub { font-size: .88rem; color: var(--gray-text); margin-bottom: 22px; line-height: 1.5; }
+
+    /* FOOTER */
+    #footer { background: #09224e; color: rgba(255,255,255,.7); padding: 60px 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand .footer-logo { height: 40px; margin-bottom: 16px; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 20px; }
+    .social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background .2s; color: #fff; }
+    .social-link:hover { background: var(--red); color: #fff; }
+    .social-link svg { width: 18px; height: 18px; }
+    .footer-col h4 { color: #fff; font-family: var(--cond-font); font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--red); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .8rem; }
+    .footer-bottom a:hover { color: var(--red); }
+
+    /* WHATSAPP */
+    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,.25); text-decoration: none; transition: transform .2s; }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .dif-grid-6 { grid-template-columns: repeat(2, 1fr); }
+      .dif3-grid  { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 960px) {
+      #hero { padding: 60px 0 110px; }
+      #hero .container { grid-template-columns: 1fr; }
+      .hero-left { text-align: center; }
+      .hero-brand { justify-content: center; }
+      .hero-checks { align-items: center; }
+      #proposta, #depoimentos, #unidades, #diferenciais,
+      #cta-final, #metodologia, #transformacao { padding-top: 72px; padding-bottom: 56px; }
+      .let-steps  { grid-template-columns: 1fr; gap: 40px; }
+      .let-steps::before { display: none; }
+      .let-step   { padding: 0 16px; }
+      .transf-grid { grid-template-columns: 1fr; }
+      .unidades-grid { grid-template-columns: 1fr; }
+      .met-dado { flex-direction: column; text-align: center; gap: 16px; }
+    }
+    @media (max-width: 640px) {
+      #site-header nav { display: none; }
+      #site-header nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--blue); padding: 20px 24px; gap: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.2); z-index: 99; }
+      .hamburger { display: flex; }
+      .container  { padding: 0 16px; }
+      #hero { padding: 40px 0 100px; }
+      #proposta, #depoimentos, #unidades, #diferenciais,
+      #cta-final, #metodologia, #transformacao { padding-top: 56px; padding-bottom: 40px; }
+      .dif-grid-6  { grid-template-columns: 1fr; }
+      .dif3-grid   { grid-template-columns: 1fr; }
+      .hero-form-card { padding: 24px 16px; }
+      .cta-final-form { padding: 28px 16px; }
+      .footer-top  { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .hero-mic-card { display: none; }
+      .hero-quote span { font-size: 1.3rem; }
+    }
+    @media (max-width: 400px) {
+      .container { padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="logo/logo_branco.png" alt="Happy Brasília" />
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="#proposta">Por que o Speech?</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#transformacao">Transformação</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#contato" class="nav-cta">Garantir vaga</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SEC 1: HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-left">
+      <div class="hero-brand">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" />
+        <div class="hero-brand-div"></div>
+        <span class="hero-brand-label">&#127908; Happy Speech · Brasília</span>
+      </div>
+
+      <div class="hero-quote">
+        <span>80%</span> das pessoas têm medo ou desconforto para falar em público. O seu filho não precisa ser uma delas.
+      </div>
+
+      <h1>Falar bem pode <span>mudar a vida</span> do seu filho.</h1>
+
+      <p class="hero-sub">
+        No Happy Speech, jovens de 10 a 17 anos desenvolvem comunicação, oratória e inteligência emocional, com confiança, alegria e do jeito Happy de aprender.
+      </p>
+
+      <div class="hero-checks">
+        <div class="hero-check">
+          <span class="check-icon">&#10003;</span>
+          <span>Oratória, comunicação e habilidades socioemocionais</span>
+        </div>
+        <div class="hero-check">
+          <span class="check-icon">&#10003;</span>
+          <span>Turmas para jovens de 10 a 17 anos</span>
+        </div>
+        <div class="hero-check">
+          <span class="check-icon">&#10003;</span>
+          <span>Unidades em Brasília: Asa Sul e Asa Norte</span>
+        </div>
+      </div>
+
+      <div class="hero-mic-card">
+        <div class="mic-card-title">&#127908; O que o curso desenvolve</div>
+        <div class="mic-stats">
+          <div class="mic-stat">
+            <div class="mic-stat-num">&#127908;</div>
+            <div class="mic-stat-text">Oratória</div>
+          </div>
+          <div class="mic-stat">
+            <div class="mic-stat-num">&#129504;</div>
+            <div class="mic-stat-text">Inteligência Emocional</div>
+          </div>
+          <div class="mic-stat">
+            <div class="mic-stat-num">&#129309;</div>
+            <div class="mic-stat-text">Empatia</div>
+          </div>
+          <div class="mic-stat">
+            <div class="mic-stat-num">&#127775;</div>
+            <div class="mic-stat-text">Autoestima</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="hero-form-card" id="contato">
+      <h2>Garanta a vaga do seu filho!</h2>
+      <p class="form-sub">Preencha e nossa equipe entra em contato!</p>
+
+      <form id="form-hero" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <input type="text" name="nome_responsavel" placeholder="Nome do responsável *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="nome_crianca" placeholder="Nome da criança/jovem *" required />
+        </div>
+        <div class="form-group">
+          <input type="number" name="idade" placeholder="Idade da criança *" min="9" max="18" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="E-mail *" required />
+        </div>
+        <div class="form-group">
+          <select name="unidade" required>
+            <option value="" disabled selected>Unidade de interesse *</option>
+            <option value="Asa Sul">Asa Sul</option>
+            <option value="Asa Norte">Asa Norte</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-red btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
+          QUERO SER HAPPY SPEECH!
+        </button>
+        <p class="form-privacy">&#128274; Seus dados estão seguros. Não enviamos spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 2: PROPOSTA DE VALOR -->
+<section id="proposta">
+  <div class="container">
+    <p class="prop-stat fade-in"><span>3 em cada 4</span> pessoas têm medo de falar em público.</p>
+    <p class="prop-lead fade-in">Esse medo começa cedo. E pode ser superado cedo também.</p>
+    <p class="prop-sub fade-in">
+      Saber se comunicar bem é uma das habilidades mais valorizadas no mundo, na escola, no trabalho e na vida. No Happy Speech, seu filho aprende a se expressar com clareza, empatia e confiança, superando seus próprios limites de um jeito prático e divertido.
+    </p>
+
+    <div class="dif-grid-6">
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#127908;</div>
+        <div class="dif-title">Oratória e comunicação assertiva na prática</div>
+        <p class="dif-text">Técnicas reais de fala, postura e argumento aplicadas no cotidiano do jovem, não só no palco.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#128172;</div>
+        <div class="dif-title">Linguagem verbal e não verbal</div>
+        <p class="dif-text">Expressão completa: o jovem aprende que comunicação vai muito além das palavras.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#129504;</div>
+        <div class="dif-title">Inteligência emocional integrada</div>
+        <p class="dif-text">Reconhecer emoções, lidar com o nervosismo e transformar ansiedade em energia positiva.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#129309;</div>
+        <div class="dif-title">Empatia, escuta ativa e relações saudáveis</div>
+        <p class="dif-text">Comunicar-se bem é também saber ouvir. O jovem desenvolve escuta genuína e conexões mais profundas.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#127775;</div>
+        <div class="dif-title">Autoestima e confiança para se posicionar</div>
+        <p class="dif-text">O Happy Speech forma jovens que sabem quem são e se expressam com segurança em qualquer ambiente.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#127917;</div>
+        <div class="dif-title">Aprendizado com experiências práticas</div>
+        <p class="dif-text">Dinâmicas, debates, apresentações e desafios reais: aprender comunicação praticando comunicação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 3: METODOLOGIA LET -->
+<section id="metodologia">
+  <div class="container">
+    <h2 class="section-title fade-in">Como é uma aula de Happy Speech?</h2>
+    <p class="met-sub fade-in">
+      A metodologia LET (Lean Education Technology) coloca o jovem como protagonista. Sem palco de teatro tradicional: aqui, a gente aprende se comunicando de verdade, em situações reais.
+    </p>
+
+    <div class="let-steps">
+      <div class="let-step fade-in">
+        <div class="let-step-num">&#128269;</div>
+        <div class="let-step-label">Etapa 1</div>
+        <h3>Descoberta</h3>
+        <p>O aluno explora conceitos de comunicação, oratória e inteligência emocional conectados ao cotidiano dele.</p>
+      </div>
+      <div class="let-step fade-in">
+        <div class="let-step-num">&#127919;</div>
+        <div class="let-step-label">Etapa 2</div>
+        <h3>Missão</h3>
+        <p>Um desafio comunicativo real é apresentado: como se expressar com clareza, confiança e empatia nessa situação?</p>
+      </div>
+      <div class="let-step fade-in">
+        <div class="let-step-num">&#128296;</div>
+        <div class="let-step-label">Etapa 3</div>
+        <h3>Construção</h3>
+        <p>Em equipe, os jovens praticam, apresentam e evoluem, desenvolvendo autoestima e habilidades de comunicação para a vida.</p>
+      </div>
+    </div>
+
+    <div class="met-dado fade-in">
+      <div class="met-dado-text">
+        <span>1</span> aula por semana &nbsp;&#183;&nbsp; Faixa etária: <span>10</span> a <span>17</span> anos &nbsp;&#183;&nbsp; Aprendizado por vivências práticas
+      </div>
+      <a href="#contato" class="btn btn-red">QUERO SABER MAIS</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 4: TRANSFORMAÇÃO -->
+<section id="transformacao">
+  <div class="container">
+    <h2 class="section-title fade-in">O que muda na vida do seu filho?</h2>
+    <p class="transf-sub fade-in">No Happy Speech, o aprendizado vai muito além de falar bem. É sobre crescer confiante, feliz e pronto para o mundo.</p>
+
+    <div class="transf-grid">
+      <div class="transf-col antes fade-in">
+        <div class="transf-col-header">
+          <span class="transf-col-header-icon">&#128542;</span>
+          <span class="transf-col-header-title">Antes do Happy Speech</span>
+        </div>
+        <div class="transf-items">
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Tímido para se apresentar</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Dificuldade de se expressar</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Medo de errar na frente dos outros</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Não sabe ouvir o próximo</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Inseguro nas relações sociais</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="transf-col depois fade-in">
+        <div class="transf-col-header">
+          <span class="transf-col-header-icon">&#128512;</span>
+          <span class="transf-col-header-title">Depois do Happy Speech</span>
+        </div>
+        <div class="transf-items">
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Fala com confiança para grupos</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Comunicação clara e assertiva</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Autoestima elevada e resiliência</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Empatia e escuta ativa desenvolvidas</span>
+          </div>
+          <div class="transf-item">
+            <span class="transf-dot"></span>
+            <span>Habilidades socioemocionais sólidas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="transf-cta fade-in">
+      <p>&#127908; A transformação começa na primeira aula. <strong>Garante já a vaga do seu filho!</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 5: DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <h2 class="section-title fade-in">O que os pais estão dizendo</h2>
+    <p class="dep-sub fade-in">Depoimentos reais de famílias que já vivem a experiência Happy Speech.</p>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track">
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Meu filho era extremamente tímido: evitava apresentações na escola e sofria muito com isso. Depois de alguns meses no Happy Speech, ele se inscreveu voluntariamente para falar na feira de ciências. Foi emocionante ver essa virada!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar">F</div>
+            <div>
+              <div class="dep-name">Fernanda Oliveira</div>
+              <div class="dep-role">Mãe do Lucas, 13 anos · Happy Speech Brasília</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Minha filha era muito tímida para falar em público. Depois do Happy Speech, ela se apresentou para toda a escola e eu quase chorei de orgulho. A transformação foi incrível e muito rápida."</p>
+          <div class="dep-author">
+            <div class="dep-avatar">R</div>
+            <div>
+              <div class="dep-name">Roberta Mendes</div>
+              <div class="dep-role">Mãe da Sofia, 12 anos · Happy Speech Brasília</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"O que mais me surpreendeu não foi só a oratória: foi a empatia que ele desenvolveu. Meu filho ficou mais atencioso, mais paciente e muito mais seguro de si. A Happy Speech formou um ser humano melhor."</p>
+          <div class="dep-author">
+            <div class="dep-avatar">C</div>
+            <div>
+              <div class="dep-name">Carlos Pinto</div>
+              <div class="dep-role">Pai do Matheus, 15 anos · Happy Speech Brasília</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Em 3 meses minha filha foi de 'não consigo falar na frente de ninguém' para apresentar um projeto para mais de 50 pessoas. Ela mesma ficou surpresa. O Happy Speech desbloqueou algo que ela não sabia que tinha."</p>
+          <div class="dep-author">
+            <div class="dep-avatar">A</div>
+            <div>
+              <div class="dep-name">Amanda Souza</div>
+              <div class="dep-role">Mãe da Beatriz, 11 anos · Happy Speech Brasília</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">&#8592;</button>
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <button class="carousel-btn" id="carousel-next" aria-label="Próximo">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 6: UNIDADES -->
+<section id="unidades">
+  <div class="container">
+    <h2 class="section-title fade-in">Happy Speech em Brasília: perto de você</h2>
+
+    <div class="unidades-grid">
+      <div class="unidade-card fade-in">
+        <div class="unidade-name">Happy Speech: Asa Sul</div>
+        <div class="unidade-info">
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Endereço a confirmar, Asa Sul, Brasília, DF</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            <span>A confirmar</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Horário a confirmar</span>
+          </div>
+        </div>
+        <div class="unidade-map">
+          <img src="img/unidade-asa-sul.jpeg" alt="Happy Speech Asa Sul" />
+        </div>
+        <a href="https://wa.me/5561999999999" target="_blank" class="btn btn-red btn-full">
+          FALAR COM ESTA UNIDADE
+        </a>
+      </div>
+
+      <div class="unidade-card fade-in">
+        <div class="unidade-name">Happy Speech: Asa Norte</div>
+        <div class="unidade-info">
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Endereço a confirmar, Asa Norte, Brasília, DF</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            <span>A confirmar</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Horário a confirmar</span>
+          </div>
+        </div>
+        <div class="unidade-map">
+          <img src="img/unidade-asa-norte.webp" alt="Happy Speech Asa Norte" />
+        </div>
+        <a href="https://wa.me/5561999999999" target="_blank" class="btn btn-red btn-full">
+          FALAR COM ESTA UNIDADE
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 7: DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="container">
+    <h2 class="section-title fade-in">Por que escolher o Happy Speech?</h2>
+
+    <div class="dif3-grid">
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#127942;</div>
+        <div class="dif3-title">Hub educacional completo</div>
+        <p class="dif3-text">Além da comunicação, seu filho pode aprender programação, inglês e educação financeira: tudo no mesmo lugar.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#128218;</div>
+        <div class="dif3-title">Metodologia própria (LET)</div>
+        <p class="dif3-text">Desenvolvida para o ritmo e o jeito de aprender de cada faixa etária. Prática, ativa e transformadora.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#128104;&#8205;&#127979;</div>
+        <div class="dif3-title">Professores treinados</div>
+        <p class="dif3-text">Equipe especializada, apaixonada por educação e pelo desenvolvimento humano dos alunos.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#129513;</div>
+        <div class="dif3-title">Aprendizado por vivências</div>
+        <p class="dif3-text">Situações reais que ensinam o jovem a se comunicar com confiança fora da sala de aula.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#128205;</div>
+        <div class="dif3-title">Presença local em Brasília</div>
+        <p class="dif3-text">Atendimento próximo, humanizado e comprometido com o desenvolvimento da sua cidade.</p>
+      </div>
+      <div class="dif3-card fade-in">
+        <div class="dif3-icon">&#127775;</div>
+        <div class="dif3-title">Mais de 80 mil alunos formados</div>
+        <p class="dif3-text">Marca premiada: ABF, Great Place to Work, Excelência em Franchising. Referência nacional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 8: CTA FINAL -->
+<section id="cta-final">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="container">
+    <h2 class="section-title fade-in">A voz do seu filho pode mudar o mundo.</h2>
+    <p class="cta-sub fade-in">As vagas são limitadas. Garanta hoje a matrícula no Happy Speech e dê ao seu filho a confiança para se expressar, crescer e conquistar.</p>
+
+    <div class="cta-final-form fade-in">
+      <h3>Garanta a vaga do seu filho!</h3>
+      <p class="form-sub">Preencha e nossa equipe entra em contato!</p>
+
+      <form id="form-final" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <input type="text" name="nome_responsavel" placeholder="Nome do responsável *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="nome_crianca" placeholder="Nome da criança/jovem *" required />
+        </div>
+        <div class="form-group">
+          <input type="number" name="idade" placeholder="Idade da criança *" min="9" max="18" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="E-mail *" required />
+        </div>
+        <div class="form-group">
+          <select name="unidade" required>
+            <option value="" disabled selected>Unidade de interesse *</option>
+            <option value="Asa Sul">Asa Sul</option>
+            <option value="Asa Norte">Asa Norte</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-red btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
+          QUERO GARANTIR A VAGA AGORA
+        </button>
+        <p class="form-privacy">&#128274; Seus dados estão seguros. Não enviamos spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 9: FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" class="footer-logo" />
+        <p>Happy Speech Brasília: oratória e comunicação para jovens de 10 a 17 anos. A voz do seu filho pode mudar o mundo.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/happybrasilia" target="_blank" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://facebook.com/happybrasilia" target="_blank" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/5561999999999" target="_blank" class="social-link" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">&#8592; Voltar para Happy Brasília</a></li>
+          <li><a href="#proposta">Por que o Speech?</a></li>
+          <li><a href="#metodologia">Metodologia</a></li>
+          <li><a href="#transformacao">Transformação</a></li>
+          <li><a href="#unidades">Unidades</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://instagram.com/happybrasilia" target="_blank">@happybrasilia</a></li>
+          <li><a href="https://wa.me/5561999999999" target="_blank">WhatsApp</a></li>
+          <li><a href="https://happybrasilia.com" target="_blank">happybrasilia.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&#169; 2025 Happy Brasília. Todos os direitos reservados.</p>
+      <a href="#">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5561999999999" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  /* HAMBURGER */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav').classList.toggle('open');
+  });
+
+  /* FADE IN */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* CAROUSEL */
+  const track = document.getElementById('carousel-track');
+  const wrapper = track.parentElement;
+  const dotsContainer = document.getElementById('carousel-dots');
+  const cards = track.querySelectorAll('.dep-card');
+  const GAP = 24;
+  let currentIndex = 0;
+
+  function getVisible() { return window.innerWidth < 640 ? 1 : window.innerWidth < 960 ? 2 : 3; }
+  function getTotalSlides() { return Math.ceil(cards.length / getVisible()); }
+  function getCardWidth() { return (wrapper.offsetWidth - GAP * (getVisible() - 1)) / getVisible(); }
+
+  function setCardWidths() {
+    const w = getCardWidth();
+    cards.forEach(c => { c.style.width = w + 'px'; });
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < getTotalSlides(); i++) {
+      const d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    const total = getTotalSlides();
+    currentIndex = Math.max(0, Math.min(index, total - 1));
+    track.style.transform = 'translateX(-' + (currentIndex * getVisible() * (getCardWidth() + GAP)) + 'px)';
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+
+  document.getElementById('carousel-prev').addEventListener('click', () => goTo(currentIndex - 1));
+  document.getElementById('carousel-next').addEventListener('click', () => goTo(currentIndex + 1));
+
+  setCardWidths(); buildDots();
+  window.addEventListener('resize', () => { setCardWidths(); buildDots(); goTo(0); });
+  setInterval(() => goTo((currentIndex + 1) % getTotalSlides()), 5000);
+
+  /* FORM */
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    /*
+      TODO: fbq('track', 'Lead');
+      TODO: gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXX/XXXXXXXX' });
+    */
+    const btn = e.target.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
+    btn.textContent = 'Enviado! Entraremos em contato.';
+    btn.style.background = '#28a745';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+    e.target.reset();
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 5000);
+  }
+</script>
+
+</body>
+</html>
