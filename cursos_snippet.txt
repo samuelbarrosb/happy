@@ -1,0 +1,73 @@
+<section id="cursos">
+  <div class="container">
+    <h2 class="section-title fade-in">Escolha o caminho do seu filho</h2>
+    <p class="cursos-sub fade-in">Cada curso foi criado para desenvolver uma habilidade essencial. Seu filho pode fazer um ou vários, a Happy é um hub completo.</p>
+
+    <div class="cursos-grid">
+      <div class="curso-card code fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb">&#128187;</div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Code</div>
+            <div class="curso-tagline">programação e tecnologia</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho deixa de só jogar e passa a criar. Do raciocínio lógico ao primeiro jogo digital.</p>
+        <div class="curso-footer">
+          <span class="curso-age">5 a 17 anos</span>
+          <a href="happy-code.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card money fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb">&#128176;</div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Money</div>
+            <div class="curso-tagline">educação financeira</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho aprende a cuidar do dinheiro, investir e construir o sonho de um futuro próspero, brincando.</p>
+        <div class="curso-footer">
+          <span class="curso-age">10 a 14 anos</span>
+          <a href="happy-money.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card speech fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb">&#127908;</div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Speech</div>
+            <div class="curso-tagline">comunicação e oratória</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho ganha voz, confiança e inteligência emocional para se comunicar com o mundo.</p>
+        <div class="curso-footer">
+          <span class="curso-age">10 a 17 anos</span>
+          <a href="happy-speech.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card english fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb">&#127758;</div>
+          <div class="curso-label">
+            <div class="curso-name">Happy English</div>
+            <div class="curso-tagline">inglês do básico à fluência</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho aprende inglês de verdade, com liberdade, confiança e metodologia que vai muito além da gramática.</p>
+        <div class="curso-footer">
+          <span class="curso-age">5 a 17+ anos</span>
+          <a href="happy-english.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursos-cta-box fade-in">
+      <p><strong>Não sabe qual curso escolher?</strong> Nossa equipe te ajuda a encontrar o caminho certo para o seu filho.</p>
+      <a href="#contato" class="btn btn-blue" style="padding:14px 36px;">FALE COM A GENTE</a>
+    </div>
+  </div>
+</section>

@@ -26,6 +26,9 @@
       --orange:       #F37021;
       --orange-dark:  #733610;
       --orange-light: #FEF0E6;
+      --green:        #B1CB4E;
+      --yellow:       #FCB017;
+      --red:          #DD3736;
       --white:        #FFFFFF;
       --gray-bg:      #F5F6FA;
       --gray-text:    #555;
@@ -87,11 +90,6 @@
       padding: 80px 0 130px;
       position: relative; overflow: hidden;
     }
-    #hero::before {
-      content: ''; position: absolute; bottom: -2px; left: 0;
-      width: 100%; height: 70px; background: #fff;
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
     #hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 
     .hero-left { color: #fff; }
@@ -139,23 +137,19 @@
       font-size: .75rem; font-weight: 900; flex-shrink: 0;
     }
 
-    /* World visual element */
-    .hero-world-card {
+    /* Centro Britânico badge */
+    .hero-cb-badge {
+      display: flex; align-items: center; gap: 20px;
       background: rgba(0,0,0,.3);
-      border: 1px solid rgba(243,112,33,.25);
-      border-radius: 20px; padding: 28px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      border: 1px solid rgba(243,112,33,.3);
+      border-radius: 16px; padding: 20px 24px;
+      margin-top: 4px;
     }
-    .world-flag {
-      background: rgba(243,112,33,.12);
-      border: 1px solid rgba(243,112,33,.2);
-      border-radius: 12px; padding: 16px 12px;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      text-align: center;
-    }
-    .world-flag .flag-emoji { font-size: 2rem; }
-    .world-flag .flag-text  { font-family: var(--cond-font); font-size: .78rem; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .05em; }
-    .world-flag .flag-phrase{ font-size: .82rem; color: var(--orange); font-style: italic; margin-top: 2px; }
+    .hero-cb-logo { height: 52px; width: auto; flex-shrink: 0; }
+    .hero-cb-divider { width: 1px; height: 52px; background: rgba(255,255,255,.2); flex-shrink: 0; }
+    .hero-cb-label { font-family: var(--cond-font); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.5); margin-bottom: 4px; }
+    .hero-cb-title { font-family: var(--title-font); font-weight: 900; font-size: 1.05rem; letter-spacing: -0.03em; color: #fff; line-height: 1.2; margin-bottom: 4px; }
+    .hero-cb-desc { font-size: .82rem; color: rgba(255,255,255,.75); line-height: 1.5; }
 
     /* Hero Form */
     .hero-form-card {
@@ -331,19 +325,15 @@
     .unidade-map img { width: 100%; height: 100%; object-fit: cover; }
 
     /* SEC 7 — DIFERENCIAIS */
-    #diferenciais { padding: 100px 0 80px; background: #fff; }
+    #diferenciais { padding: 100px 0 80px; background: var(--gray-bg); }
     #diferenciais .section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 56px; }
 
-    .dif3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .dif3-card {
-      background: var(--gray-bg); border-radius: 16px; padding: 32px 28px;
-      transition: transform .25s, box-shadow .25s;
-      border-bottom: 3px solid transparent;
-    }
-    .dif3-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.09); border-bottom-color: var(--orange); }
-    .dif3-icon  { font-size: 2.4rem; margin-bottom: 14px; }
-    .dif3-title { font-family: var(--title-font); font-weight: 900; font-size: 1.15rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 8px; }
-    .dif3-text  { font-size: .9rem; color: var(--gray-text); line-height: 1.65; }
+    .diferenciais-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .diferencial-card { background: #fff; border-radius: 16px; padding: 32px 28px; transition: transform .25s, box-shadow .25s; }
+    .diferencial-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.09); }
+    .diferencial-icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .diferencial-title { font-family: var(--title-font); font-weight: 900; font-size: 1.15rem; letter-spacing: -0.03em; text-transform: lowercase; color: var(--blue); margin-bottom: 10px; }
+    .diferencial-text { font-size: .9rem; color: var(--gray-text); line-height: 1.65; }
 
     /* SEC 8 — CTA FINAL */
     #cta-final { background: var(--blue); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
@@ -389,7 +379,7 @@
     /* RESPONSIVE */
     @media (max-width: 1100px) {
       .dif-grid-6   { grid-template-columns: repeat(2, 1fr); }
-      .dif3-grid    { grid-template-columns: repeat(2, 1fr); }
+      .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
       .trilhas-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-top   { grid-template-columns: 1fr 1fr; }
     }
@@ -416,18 +406,85 @@
       #proposta, #depoimentos, #unidades, #diferenciais, #cta-final,
       #metodologia, #trilhas { padding-top: 56px; padding-bottom: 40px; }
       .dif-grid-6   { grid-template-columns: 1fr; }
-      .dif3-grid    { grid-template-columns: 1fr; }
+      .diferenciais-grid { grid-template-columns: 1fr; }
+      .diferencial-card { padding: 24px 20px; }
       .trilhas-grid { grid-template-columns: 1fr; }
       .hero-form-card  { padding: 24px 16px; }
       .cta-final-form  { padding: 28px 16px; }
       .footer-top      { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom   { flex-direction: column; align-items: flex-start; }
-      .hero-world-card { display: none; }
+      .hero-cb-badge { display: none; }
     }
     @media (max-width: 400px) {
       .container { padding: 0 12px; }
     }
-  </style>
+  
+    /* Modal Whatsapp */
+    .wa-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+    .wa-modal.show { display: flex; opacity: 1; }
+    .wa-modal-content { background-color: #fefefe; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; position: relative; transform: translateY(-20px); transition: transform 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+    .wa-modal.show .wa-modal-content { transform: translateY(0); }
+    .wa-modal-close { color: #aaa; position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.2s; }
+    .wa-modal-close:hover { color: var(--blue); }
+
+    /* SECAO CURSOS - HUB */
+    #cursos { padding: 100px 0 80px; background: var(--gray-bg); }
+    #cursos .section-title { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--blue); text-align: center; margin-bottom: 12px; }
+    #cursos .cursos-sub { text-align: center; color: var(--gray-text); font-size: 1rem; max-width: 600px; margin: 0 auto 56px; line-height: 1.7; }
+
+    .cursos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-bottom: 48px; }
+    .curso-card { background: #fff; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,.07); transition: transform .25s, box-shadow .25s; }
+    .curso-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.12); }
+    .curso-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+    .curso-card.code::before    { background: var(--green);  }
+    .curso-card.money::before   { background: var(--yellow); }
+    .curso-card.speech::before  { background: var(--red);    }
+    .curso-card.english::before { background: var(--orange); }
+
+    .curso-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+    .curso-orb { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+    .curso-card.code .curso-orb    { background: var(--green);  }
+    .curso-card.money .curso-orb   { background: var(--yellow); }
+    .curso-card.speech .curso-orb  { background: var(--red);    }
+    .curso-card.english .curso-orb { background: var(--orange); }
+
+    .curso-name    { font-family: var(--title-font); font-weight: 900; font-size: 1.5rem; letter-spacing: -0.03em; color: var(--blue); }
+    .curso-tagline { font-family: var(--condensed-font); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: #aaa; }
+    .curso-desc    { font-size: .95rem; color: var(--gray-text); line-height: 1.65; margin-bottom: 20px; }
+    .curso-footer  { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .curso-age { font-family: var(--condensed-font); font-size: .8rem; color: #aaa; display: flex; align-items: center; gap: 6px; }
+    .curso-age::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+    .curso-card.code .curso-age::before    { background: var(--green);  }
+    .curso-card.money .curso-age::before   { background: var(--yellow); }
+    .curso-card.speech .curso-age::before  { background: var(--red);    }
+    .curso-card.english .curso-age::before { background: var(--orange); }
+
+    .btn-curso { padding: 10px 22px; border-radius: 8px; font-size: .85rem; font-weight: 700; text-decoration: none; transition: opacity .2s, transform .2s; }
+    .btn-curso:hover { opacity: .85; transform: translateY(-1px); }
+    .curso-card.code .btn-curso    { background: var(--green);  color: #fff; }
+    .curso-card.money .btn-curso   { background: var(--yellow); color: var(--blue); }
+    .curso-card.speech .btn-curso  { background: var(--red);    color: #fff; }
+    .curso-card.english .btn-curso { background: var(--orange); color: #fff; }
+
+    .cursos-cta-box { text-align: center; padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    .cursos-cta-box p { font-size: 1.05rem; color: var(--gray-text); margin-bottom: 16px; }
+    .cursos-cta-box strong { color: var(--blue); }
+
+    /* HIGHLIGHT STATS */
+    .highlight-stats { background: var(--blue); padding: 40px 0; position: relative; z-index: 10; border-bottom: 4px solid var(--orange); }
+    .stats-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .stat-item { text-align: center; color: #fff; }
+    .stat-number { display: block; font-family: var(--title-font); font-weight: 900; font-size: clamp(2.4rem, 4vw, 3.2rem); color: var(--orange); line-height: 1.1; margin-bottom: 4px; }
+    .stat-label { font-family: var(--cond-font); font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; opacity: .9; }
+
+    /* ESCOLAS PARCEIRAS */
+    .escolas-parceiras { background: var(--gray-bg); padding: 40px 0; text-align: center; }
+    .escolas-parceiras p { font-family: var(--cond-font); font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; color: #999; margin-bottom: 24px; font-weight: 700; }
+    .escolas-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px; }
+    .escolas-logos img { height: 48px; width: auto; object-fit: contain; filter: grayscale(100%) opacity(60%); transition: filter .3s, transform .3s; }
+    .escolas-logos img:hover { filter: grayscale(0%) opacity(100%); transform: scale(1.05); }
+</style>
 </head>
 <body>
 
@@ -488,26 +545,13 @@
         </div>
       </div>
 
-      <div class="hero-world-card">
-        <div class="world-flag">
-          <span class="flag-emoji">&#127482;&#127480;</span>
-          <span class="flag-text">Estados Unidos</span>
-          <span class="flag-phrase">"Amazing!"</span>
-        </div>
-        <div class="world-flag">
-          <span class="flag-emoji">&#127468;&#127463;</span>
-          <span class="flag-text">Reino Unido</span>
-          <span class="flag-phrase">"Brilliant!"</span>
-        </div>
-        <div class="world-flag">
-          <span class="flag-emoji">&#127462;&#127482;</span>
-          <span class="flag-text">Austrália</span>
-          <span class="flag-phrase">"No worries!"</span>
-        </div>
-        <div class="world-flag">
-          <span class="flag-emoji">&#127464;&#127462;</span>
-          <span class="flag-text">Canadá</span>
-          <span class="flag-phrase">"Awesome!"</span>
+      <div class="hero-cb-badge">
+        <img src="logo/centroBritanico.png" alt="Centro Britânico" class="hero-cb-logo" />
+        <div class="hero-cb-divider"></div>
+        <div class="hero-cb-text">
+          <div class="hero-cb-label">Metodologia oficial</div>
+          <div class="hero-cb-title">Centro Britânico</div>
+          <div class="hero-cb-desc">Qualidade e excelência reconhecidas no ensino do inglês, do básico à fluência.</div>
         </div>
       </div>
     </div>
@@ -536,8 +580,8 @@
         <div class="form-group">
           <select name="unidade" required>
             <option value="" disabled selected>Unidade de interesse *</option>
-            <option value="Asa Sul">Asa Sul</option>
-            <option value="Asa Norte">Asa Norte</option>
+            <option value="910 Sul">910 Sul</option>
+            <option value="711 Norte">711 Norte</option>
           </select>
         </div>
         <button type="submit" class="btn btn-orange btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
@@ -545,6 +589,40 @@
         </button>
         <p class="form-privacy">&#128274; Seus dados estão seguros. Não enviamos spam.</p>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- DESTAQUE NÚMEROS -->
+<section class="highlight-stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <span class="stat-number">+80</span>
+        <span class="stat-label">escolas parceiras</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number">+80 mil</span>
+        <span class="stat-label">alunos passaram pela happy</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number">+150</span>
+        <span class="stat-label">operações</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCOLAS PARCEIRAS -->
+<section class="escolas-parceiras">
+  <div class="container">
+    <p>Algumas de nossas escolas parceiras</p>
+    <div class="escolas-logos">
+      <img src="escolas/adventista.png" alt="Adventista" />
+      <img src="escolas/erasto.png" alt="Erasto" />
+      <img src="escolas/maplebear.png" alt="Maple Bear" />
+      <img src="escolas/objrtivo.png" alt="Objetivo" style="max-height: 28px;" />
+      <img src="escolas/sesc.png" alt="Sesc" />
     </div>
   </div>
 </section>
@@ -722,48 +800,60 @@
 
         <div class="dep-card">
           <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="dep-text">"Minha filha de 7 anos já canta músicas em inglês, entende séries sem legenda e não tem vergonha nenhuma de falar. A metodologia da Happy é incrível: ela aprende sorrindo, sem perceber que está estudando!"</p>
+          <p class="dep-text">"Eu amoooo o Happy! A minha filha começou a estudar lá este ano e já aprendeu a criar a sua própria lojinha online."</p>
           <div class="dep-author">
-            <div class="dep-avatar">R</div>
+            <div class="dep-avatar" style="background:var(--blue);color:#fff">F</div>
             <div>
-              <div class="dep-name">Rodrigo Almeida</div>
-              <div class="dep-role">Pai da Sofia, 7 anos · Happy English Brasília</div>
+              <div class="dep-name">Fernanda Ribeiro</div>
+              <div class="dep-role">Avaliação Google · Happy Brasília</div>
             </div>
           </div>
         </div>
 
         <div class="dep-card">
           <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="dep-text">"Em 6 meses meu filho já conversa em inglês sem travar. A metodologia é completamente diferente do que eu já vi: ele aprende de verdade, não decora. A confiança dele cresceu muito!"</p>
+          <p class="dep-text">"Meu filho de 6 anos fez a colônia de férias Dash and Dot e amou!"</p>
           <div class="dep-author">
-            <div class="dep-avatar">M</div>
+            <div class="dep-avatar" style="background:var(--green)">a</div>
             <div>
-              <div class="dep-name">Marcos Alves</div>
-              <div class="dep-role">Pai do Pedro, 11 anos · Happy English Brasília</div>
+              <div class="dep-name">aline minervino</div>
+              <div class="dep-role">Avaliação Google · Happy Brasília</div>
             </div>
           </div>
         </div>
 
         <div class="dep-card">
           <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="dep-text">"Minha filha era tímida para falar em qualquer língua. Hoje ela não só fala inglês, mas se expressa com confiança. A Happy trabalhou a autoestima dela de uma forma que nenhuma escola tradicional fez."</p>
+          <p class="dep-text">"Meu lugar favorito!!! melhor escola de tecnologia para crianças do Brasil."</p>
           <div class="dep-author">
-            <div class="dep-avatar">C</div>
+            <div class="dep-avatar" style="background:var(--yellow);color:var(--blue)">a</div>
             <div>
-              <div class="dep-name">Camila Rocha</div>
-              <div class="dep-role">Mãe da Laura, 9 anos · Happy English Brasília</div>
+              <div class="dep-name">ana beatriz</div>
+              <div class="dep-role">Avaliação Google · Happy Brasília</div>
             </div>
           </div>
         </div>
 
         <div class="dep-card">
           <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="dep-text">"A Happy English mudou a relação do meu filho com o inglês. Antes ele tinha pavor da matéria na escola. Hoje ele pede pra assistir filmes sem legenda. É outra criança!"</p>
+          <p class="dep-text">"Meu filho de 10 anos adora a Happy! Junta diversão com aprendizado. Lá ele teve contato com tecnologia/ programação (uso de IA de forma responsável) inglês e oratória, educação financeira e sempre quer voltar. Recomendo de olhos fechados. Nota 1000!"</p>
           <div class="dep-author">
-            <div class="dep-avatar">A</div>
+            <div class="dep-avatar" style="background:var(--orange)">D</div>
             <div>
-              <div class="dep-name">Ana Beatriz Costa</div>
-              <div class="dep-role">Mãe do Davi, 10 anos · Happy English Brasília</div>
+              <div class="dep-name">Diana Leite Nunes dos Santos</div>
+              <div class="dep-role">Avaliação Google · Happy Brasília</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Excelente escola! Meu filho teve contato com tecnologia de forma leve e divertida, aprendendo na prática. Já nas primeiras aulas percebi evolução no raciocínio e na criatividade. Muito satisfeito com o resultado!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar" style="background:var(--red)">i</div>
+            <div>
+              <div class="dep-name">ismael viana</div>
+              <div class="dep-role">Avaliação Google · Happy Brasília</div>
             </div>
           </div>
         </div>
@@ -790,16 +880,14 @@
         <div class="unidade-info">
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Endereço a confirmar, Asa Sul, Brasília, DF</span>
+            <span>910 Sul - Mix Park Sul -  Bloco D</span>
           </div>
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
-            <span>A confirmar</span>
+            <span>(61) 3244-2510</span>
           </div>
-          <div class="unidade-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Horário a confirmar</span>
-          </div>
+          
+          
         </div>
         <div class="unidade-map">
           <img src="img/unidade-asa-sul.jpeg" alt="Happy English Asa Sul" />
@@ -814,16 +902,14 @@
         <div class="unidade-info">
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Endereço a confirmar, Asa Norte, Brasília, DF</span>
+            <span>SHCGN 710/711 loja 27</span>
           </div>
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
-            <span>A confirmar</span>
+            <span>(61) 996374604</span>
           </div>
-          <div class="unidade-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Horário a confirmar</span>
-          </div>
+          
+          
         </div>
         <div class="unidade-map">
           <img src="img/unidade-asa-norte.webp" alt="Happy English Asa Norte" />
@@ -841,42 +927,165 @@
   <div class="container">
     <h2 class="section-title fade-in">Por que escolher o Happy English?</h2>
 
-    <div class="dif3-grid">
-      <div class="dif3-card fade-in">
-        <div class="dif3-icon">&#127942;</div>
-        <div class="dif3-title">Hub educacional completo</div>
-        <p class="dif3-text">Além do inglês, seu filho pode aprender programação, educação financeira e comunicação: tudo no mesmo lugar.</p>
+    <div class="diferenciais-grid">
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#127942;</div>
+        <div class="diferencial-title">Hub educacional completo</div>
+        <p class="diferencial-text">4 cursos em um só lugar: tecnologia, finanças, comunicação e inglês. Seu filho cresce por inteiro.</p>
       </div>
-      <div class="dif3-card fade-in">
-        <div class="dif3-icon">&#128218;</div>
-        <div class="dif3-title">Metodologia ativa e própria</div>
-        <p class="dif3-text">Aprendizado por vivências, não por repetição. O inglês entra na vida real do seu filho de forma natural.</p>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#128218;</div>
+        <div class="diferencial-title">Metodologia LET exclusiva</div>
+        <p class="diferencial-text">Desenvolvida pela própria Happy. Ativa, prática e comprovada em mais de 80.000 alunos no Brasil.</p>
       </div>
-      <div class="dif3-card fade-in">
-        <div class="dif3-icon">&#128104;&#8205;&#127979;</div>
-        <div class="dif3-title">Professores treinados e apaixonados</div>
-        <p class="dif3-text">Equipe especializada, focada no desenvolvimento integral do aluno, não só no idioma.</p>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#128104;&#8205;&#127979;</div>
+        <div class="diferencial-title">Professores treinados e apaixonados</div>
+        <p class="diferencial-text">Equipe especializada, formada e continuamente capacitada pela franqueadora.</p>
       </div>
-      <div class="dif3-card fade-in">
-        <div class="dif3-icon">&#127919;</div>
-        <div class="dif3-title">4 trilhas por faixa etária</div>
-        <p class="dif3-text">Conteúdo adaptado para cada momento: do primeiro contato com o inglês até a fluência completa.</p>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#129513;</div>
+        <div class="diferencial-title">Aprendizado por projetos reais</div>
+        <p class="diferencial-text">Nada de decoreba. Cada aula gera um resultado concreto na vida do aluno.</p>
       </div>
-      <div class="dif3-card fade-in">
-        <div class="dif3-icon">&#128205;</div>
-        <div class="dif3-title">Presença local em Brasília</div>
-        <p class="dif3-text">Atendimento próximo, humanizado e comprometido com o desenvolvimento da sua cidade.</p>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#128205;</div>
+        <div class="diferencial-title">Presença local em Brasília</div>
+        <p class="diferencial-text">Atendimento próximo, humanizado e comprometido com o desenvolvimento da cidade.</p>
       </div>
-      <div class="dif3-card fade-in">
-        <div class="dif3-icon">&#127775;</div>
-        <div class="dif3-title">Mais de 80 mil alunos formados</div>
-        <p class="dif3-text">Marca premiada: ABF, Great Place to Work, Excelência em Franchising. Referência nacional em educação.</p>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#127775;</div>
+        <div class="diferencial-title">Marca premiada e reconhecida</div>
+        <p class="diferencial-text">ABF, Great Place to Work, Excelência em Franchising: a Happy é referência nacional em educação.</p>
+      </div>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#128663;</div>
+        <div class="diferencial-title">Estacionamento Facilitado</div>
+        <p class="diferencial-text">Asa Sul com voucher para garagem e Asa Norte com fácil acesso para parar na porta.</p>
+      </div>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#127468;&#127463;</div>
+        <div class="diferencial-title">Metodologia Centro Britânico</div>
+        <p class="diferencial-text">Excelência no ensino da língua inglesa com a qualidade reconhecida do Centro Britânico.</p>
+      </div>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#129302;</div>
+        <div class="diferencial-title">Robôs Dash</div>
+        <p class="diferencial-text">Para os pequenos de 5 e 6 anos aprenderem programação na prática e com muita diversão.</p>
+      </div>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#127941;</div>
+        <div class="diferencial-title">Competições Internas</div>
+        <p class="diferencial-text">Eventos com premiação, como o Ideathon, para estimular o desenvolvimento e a criatividade.</p>
+      </div>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#128214;</div>
+        <div class="diferencial-title">Empréstimo de Livros</div>
+        <p class="diferencial-text">Biblioteca acessível aos alunos para incentivar o hábito da leitura e a imaginação.</p>
+      </div>
+      <div class="diferencial-card fade-in">
+        <div class="diferencial-icon">&#127918;</div>
+        <div class="diferencial-title">Espaço Gamer e Coworking</div>
+        <p class="diferencial-text">Na Asa Sul, os alunos aproveitam o espaço gamer enquanto os pais têm uma área para teletrabalho.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SEC 8: CTA FINAL -->
+<!-- SEÇÃO METODOLOGIA CENTRO BRITÂNICO -->
+<section id="metodologia-cb" style="padding: 100px 0; background: var(--blue);">
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
+      <div style="flex: 1; min-width: 300px;">
+        <h2 class="section-title fade-in" style="text-align: left; color: #fff; margin-bottom: 20px;">Metodologia Centro Britânico</h2>
+        <p class="section-desc fade-in" style="text-align: left; margin-bottom: 20px; font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.85);">
+          Na Happy English, unimos a inovação e o ensino prático à excelência do <strong style="color:#fff;">Centro Britânico</strong>. Uma parceria que garante um ensino da língua inglesa com padrão internacional de qualidade, reconhecido por sua eficácia no preparo para exames e na fluência para o mundo real.
+        </p>
+        <p class="section-desc fade-in" style="text-align: left; font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.85);">
+          Nossos alunos aprendem em um ambiente dinâmico, absorvendo o idioma de forma natural e engajadora, desenvolvendo desde cedo a confiança para se comunicar globalmente.
+        </p>
+      </div>
+      <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center;">
+        <img src="logo/centroBritanico.png" alt="Metodologia Centro Britânico" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);" class="fade-in">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cursos">
+  <div class="container">
+    <h2 class="section-title fade-in">Escolha o caminho do seu filho</h2>
+    <p class="cursos-sub fade-in">Cada curso foi criado para desenvolver uma habilidade essencial. Seu filho pode fazer um ou vários, a Happy é um hub completo.</p>
+
+    <div class="cursos-grid">
+      <div class="curso-card code fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/code-icon.png" alt="Happy Code" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Code</div>
+            <div class="curso-tagline">programação e tecnologia</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho deixa de só jogar e passa a criar. Do raciocínio lógico ao primeiro jogo digital.</p>
+        <div class="curso-footer">
+          <span class="curso-age">5 a 17 anos</span>
+          <a href="happy-code.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card money fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/money-icon.png" alt="Happy Money" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Money</div>
+            <div class="curso-tagline">educação financeira</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho aprende a cuidar do dinheiro, investir e construir o sonho de um futuro próspero, brincando.</p>
+        <div class="curso-footer">
+          <span class="curso-age">10 a 14 anos</span>
+          <a href="happy-money.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card speech fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/speech-icone.png" alt="Happy Speech" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Speech</div>
+            <div class="curso-tagline">comunicação e oratória</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho ganha voz, confiança e inteligência emocional para se comunicar com o mundo.</p>
+        <div class="curso-footer">
+          <span class="curso-age">10 a 17 anos</span>
+          <a href="happy-speech.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card english fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/english-icon.png" alt="Happy English" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy English</div>
+            <div class="curso-tagline">inglês do básico à fluência</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho aprende inglês de verdade, com liberdade, confiança e metodologia que vai muito além da gramática.</p>
+        <div class="curso-footer">
+          <span class="curso-age">5 a 17+ anos</span>
+          <a href="happy-english.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursos-cta-box fade-in">
+      <p><strong>Não sabe qual curso escolher?</strong> Nossa equipe te ajuda a encontrar o caminho certo para o seu filho.</p>
+      <a href="#contato" class="btn btn-blue" style="padding:14px 36px;">FALE COM A GENTE</a>
+    </div>
+  </div>
+</section>
+
 <section id="cta-final">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
@@ -907,8 +1116,8 @@
         <div class="form-group">
           <select name="unidade" required>
             <option value="" disabled selected>Unidade de interesse *</option>
-            <option value="Asa Sul">Asa Sul</option>
-            <option value="Asa Norte">Asa Norte</option>
+            <option value="910 Sul">910 Sul</option>
+            <option value="711 Norte">711 Norte</option>
           </select>
         </div>
         <button type="submit" class="btn btn-orange btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
@@ -969,7 +1178,7 @@
 </footer>
 
 <!-- WHATSAPP FLUTUANTE -->
-<a href="https://wa.me/5561999999999" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+<a href="#" onclick="openWaModal(event)" class="whatsapp-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -1045,5 +1254,33 @@
   }
 </script>
 
+
+<!-- MODAL WHATSAPP -->
+<div id="wa-modal" class="wa-modal">
+  <div class="wa-modal-content">
+    <span class="wa-modal-close" onclick="closeWaModal()">&times;</span>
+    <h3 style="font-family: var(--title-font); color: var(--blue); margin-bottom: 10px; font-size: 1.4rem;">Escolha uma unidade</h3>
+    <p style="color: var(--gray-text); margin-bottom: 20px; font-size: .95rem;">Com qual unidade você deseja falar?</p>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <a href="https://wa.me/556132442510" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Sul</a>
+      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Norte</a>
+    </div>
+  </div>
+</div>
+<script>
+  function openWaModal(e) {
+    e.preventDefault();
+    document.getElementById('wa-modal').classList.add('show');
+  }
+  function closeWaModal() {
+    document.getElementById('wa-modal').classList.remove('show');
+  }
+  window.addEventListener('click', function(e) {
+    var modal = document.getElementById('wa-modal');
+    if (e.target === modal) {
+      closeWaModal();
+    }
+  });
+</script>
 </body>
 </html>

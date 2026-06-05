@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colônia de Férias Happy Brasília | 6 a 24 de Julho</title>
+  <meta name="description" content="Colônia de Férias Happy Brasília: 3 semanas de tecnologia, criatividade e diversão. Minecraft Education, Games 2D, Programação e Conteúdo Digital. 6 a 24 de julho. Vagas limitadas!" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'Kobe';
+      src: url('fonte/Kobe11-Black.woff2') format('woff2'),
+           url('fonte/Kobe11-Black.woff') format('woff'),
+           url('fonte/Kobe11-Black.ttf') format('truetype');
+      font-weight: 900; font-style: normal; font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #0C306C;
+      --acc:        #FF6B35;
+      --acc-dark:   #D94F1A;
+      --acc-light:  #FFF0EA;
+      --acc2:       #FFD166;
+      --yellow:     #FCB017;
+      --red:        #DD3736;
+      --orange:     #F37021;
+      --white:      #FFFFFF;
+      --gray-bg:    #F5F6FA;
+      --gray-text:  #555;
+      --green:      #B1CB4E;
+      --title-font: 'Kobe', 'Arial Black', Impact, sans-serif;
+      --body-font:  'Roboto', Arial, sans-serif;
+      --cond-font:  'Roboto Condensed', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body  { font-family: var(--body-font); color: #333; background: #fff; overflow-x: hidden; }
+    img   { max-width: 100%; display: block; }
+
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    .section-title {
+      font-family: var(--title-font);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .btn {
+      display: inline-block; padding: 16px 32px; border-radius: 8px;
+      font-family: var(--body-font); font-weight: 700; font-size: 1rem;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: transform .2s, box-shadow .2s; text-align: center;
+    }
+    .btn:hover  { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+    .btn:active { transform: translateY(0); }
+    .btn-acc   { background: var(--acc);  color: #fff; }
+    .btn-blue  { background: var(--blue); color: #fff; }
+    .btn-full  { width: 100%; display: block; }
+
+    /* ===== HEADER ===== */
+    #site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--blue); padding: 12px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    #site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    #site-header .logo img  { height: 44px; width: auto; }
+    #site-header nav        { display: flex; gap: 28px; align-items: center; }
+    #site-header nav a      { color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .2s; }
+    #site-header nav a:hover { color: var(--acc2); }
+    #site-header .nav-cta   { background: var(--acc); color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 700 !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ===== URGENCY BANNER ===== */
+    #urgency-bar {
+      background: linear-gradient(90deg, var(--acc-dark), var(--acc));
+      padding: 10px 0; text-align: center;
+    }
+    #urgency-bar p {
+      color: #fff; font-size: .9rem; font-weight: 700;
+      font-family: var(--cond-font); text-transform: uppercase; letter-spacing: .06em;
+    }
+    #urgency-bar span { color: var(--acc2); }
+
+    /* ===== HERO ===== */
+    #hero {
+      background-color: var(--blue);
+      background-image:
+        radial-gradient(circle at 10% 85%, rgba(255,107,53,.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 15%, rgba(255,209,102,.10) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='820'%3E%3Cellipse cx='200' cy='700' rx='380' ry='380' fill='rgba(255,107,53,0.04)'/%3E%3Cellipse cx='1300' cy='120' rx='300' ry='300' fill='rgba(255,209,102,0.05)'/%3E%3Ccircle cx='700' cy='400' r='600' fill='none' stroke='rgba(255,107,53,0.04)' stroke-width='80'/%3E%3C/svg%3E");
+      background-size: cover;
+      padding: 80px 0 130px;
+      position: relative; overflow: hidden;
+    }
+
+    #hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+
+    .hero-left { color: #fff; }
+
+    .hero-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+    .hero-brand img { height: 48px; width: auto; }
+    .hero-brand-div { width: 1px; height: 44px; background: rgba(255,255,255,.25); }
+    .hero-brand-label {
+      font-family: var(--cond-font); font-size: .8rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--acc2); font-weight: 700;
+    }
+
+    .event-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,107,53,.2); border: 1px solid rgba(255,107,53,.45);
+      border-radius: 6px; padding: 7px 16px;
+      font-family: var(--cond-font); font-size: .82rem; color: var(--acc2);
+      text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .event-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+    .hero-left h1 {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      letter-spacing: -0.04em; line-height: 1.0;
+      margin-bottom: 20px; color: #fff;
+    }
+    .hero-left h1 span { color: var(--acc2); }
+
+    .hero-left .hero-sub {
+      font-size: 1.05rem; line-height: 1.7;
+      color: rgba(255,255,255,.88); margin-bottom: 32px;
+    }
+
+    .hero-date-bar {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .hero-date-pill {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px; padding: 10px 16px;
+      font-size: .88rem; color: #fff;
+    }
+    .hero-date-pill strong { color: var(--acc2); }
+
+    /* Atividades — linha completa abaixo do hero 2 colunas */
+    .hero-activities-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      grid-column: 1 / -1; margin-top: 8px;
+    }
+    .hero-act-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 14px; padding: 20px 18px;
+      transition: background .25s, transform .25s;
+    }
+    .hero-act-card:hover { background: rgba(255,107,53,.15); transform: translateY(-3px); }
+    .hero-act-emoji { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .hero-act-name {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: 1.05rem; letter-spacing: -0.03em;
+      color: var(--acc2); margin-bottom: 4px; line-height: 1.1;
+    }
+    .hero-act-desc { font-size: .82rem; color: rgba(255,255,255,.75); line-height: 1.5; }
+
+    /* Hero Form */
+    .hero-form-card {
+      background: #fff; border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.2);
+      border-top: 4px solid var(--acc);
+    }
+    .hero-form-card h2 {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: 1.6rem; letter-spacing: -0.04em;
+      color: var(--blue); margin-bottom: 6px;
+    }
+    .hero-form-card .form-sub { font-size: .88rem; color: var(--gray-text); line-height: 1.5; margin-bottom: 22px; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 12px 14px;
+      border: 1.5px solid #dde0e8; border-radius: 8px;
+      font-family: var(--body-font); font-size: .92rem; color: #333;
+      background: #fff; transition: border-color .2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--acc); }
+    .form-group input::placeholder { color: #aaa; }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF6B35' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px;
+    }
+    .form-privacy { text-align: center; font-size: .75rem; color: #aaa; margin-top: 10px; }
+
+    /* ===== STATS BAR ===== */
+    .highlight-stats {
+      background: var(--blue); padding: 40px 0;
+      border-bottom: 4px solid var(--acc);
+      position: relative; z-index: 10;
+    }
+    .stats-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .stat-item { text-align: center; color: #fff; }
+    .stat-number {
+      display: block; font-family: var(--title-font); font-weight: 900;
+      font-size: clamp(2.2rem, 4vw, 3rem); color: var(--acc2); line-height: 1.1; margin-bottom: 4px;
+    }
+    .stat-label { font-family: var(--cond-font); font-size: .95rem; text-transform: uppercase; letter-spacing: .08em; opacity: .9; }
+
+    /* ===== ACTIVITIES ===== */
+    #atividades { padding: 100px 0 80px; background: #fff; }
+    #atividades .section-title { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 16px; }
+    #atividades .ativ-sub { text-align: center; font-size: 1.05rem; color: var(--gray-text); max-width: 680px; margin: 0 auto 64px; line-height: 1.7; }
+
+    .ativ-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .ativ-card {
+      background: var(--gray-bg); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      transition: transform .25s, box-shadow .25s;
+      border-top: 5px solid var(--acc);
+    }
+    .ativ-card:nth-child(2) { border-top-color: #9B59B6; }
+    .ativ-card:nth-child(3) { border-top-color: #27AE60; }
+    .ativ-card:nth-child(4) { border-top-color: #E91E8C; }
+    .ativ-card:hover { transform: translateY(-6px); box-shadow: 0 14px 44px rgba(0,0,0,.12); }
+
+    .ativ-header {
+      background: var(--blue); padding: 28px 28px 20px;
+      position: relative;
+    }
+    .ativ-card:nth-child(2) .ativ-header { background: #5D2A8A; }
+    .ativ-card:nth-child(3) .ativ-header { background: #1A6E3A; }
+    .ativ-card:nth-child(4) .ativ-header { background: #8B0D53; }
+
+    .ativ-emoji-wrap {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; margin-bottom: 14px;
+    }
+    .ativ-name {
+      font-family: var(--title-font); font-weight: 900;
+      font-size: 1.6rem; letter-spacing: -0.04em;
+      color: var(--acc2); line-height: 1.05; margin-bottom: 4px;
+    }
+    .ativ-card:nth-child(2) .ativ-name { color: #CE93F7; }
+    .ativ-card:nth-child(3) .ativ-name { color: #6EE0A0; }
+    .ativ-card:nth-child(4) .ativ-name { color: #F980BE; }
+    .ativ-tag {
+      font-family: var(--cond-font); font-size: .75rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: rgba(255,255,255,.5);
+    }
+
+    .ativ-body { padding: 28px; }
+    .ativ-desc { font-size: .95rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px; }
+    .ativ-list { display: flex; flex-direction: column; gap: 8px; }
+    .ativ-item { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--gray-text); }
+    .ativ-dot { width: 18px; height: 18px; border-radius: 50%; background: var(--acc); color: #fff; display: flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+    .ativ-card:nth-child(2) .ativ-dot { background: #9B59B6; }
+    .ativ-card:nth-child(3) .ativ-dot { background: #27AE60; }
+    .ativ-card:nth-child(4) .ativ-dot { background: #E91E8C; }
+
+    /* ===== COMO FUNCIONA ===== */
+    #como-funciona { padding: 100px 0 80px; background: var(--blue); position: relative; overflow: hidden; }
+    #como-funciona::before { content: ''; position: absolute; top: -70px; left: 0; width: 100%; height: 70px; background: #fff; clip-path: ellipse(55% 100% at 50% 0%); }
+    #como-funciona::after  { content: ''; position: absolute; bottom: -70px; left: 0; width: 100%; height: 70px; background: var(--gray-bg); clip-path: ellipse(55% 100% at 50% 100%); }
+
+    #como-funciona .section-title { color: #fff; font-size: clamp(1.8rem, 3vw, 2.8rem); text-align: center; margin-bottom: 12px; }
+    #como-funciona .cf-sub { text-align: center; color: rgba(255,255,255,.8); font-size: 1rem; max-width: 640px; margin: 0 auto 64px; line-height: 1.7; }
+
+    .cf-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; margin-bottom: 48px; }
+    .cf-steps::before {
+      content: ''; position: absolute;
+      top: 44px; left: calc(16.66% + 24px); right: calc(16.66% + 24px);
+      height: 3px; background: linear-gradient(90deg, var(--acc), rgba(255,107,53,.4), var(--acc));
+      z-index: 0;
+    }
+    .cf-step { text-align: center; padding: 0 32px; position: relative; z-index: 1; }
+    .cf-step-num {
+      width: 88px; height: 88px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem; margin: 0 auto 24px;
+      background: rgba(255,107,53,.15);
+      border: 3px solid var(--acc);
+      box-shadow: 0 0 0 6px rgba(255,107,53,.08);
+    }
+    .cf-step h3 { font-family: var(--title-font); font-weight: 900; font-size: 1.4rem; letter-spacing: -0.03em; color: var(--acc2); margin-bottom: 10px; }
+    .cf-step-label { font-family: var(--cond-font); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.45); margin-bottom: 12px; }
+    .cf-step p { font-size: .93rem; color: rgba(255,255,255,.82); line-height: 1.65; }
+
+    .cf-info-bar {
+      background: rgba(255,107,53,.12); border: 1px solid rgba(255,107,53,.3);
+      border-radius: 16px; padding: 28px 36px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
+    }
+    .cf-info-text { color: rgba(255,255,255,.9); font-size: 1.15rem; font-weight: 600; letter-spacing: .02em; }
+    .cf-info-text span { color: var(--acc2); font-family: var(--title-font); font-size: 1.5rem; }
+
+    /* ===== DIFERENCIAIS ===== */
+    #diferenciais { padding: 100px 0 80px; background: var(--gray-bg); }
+    #diferenciais .section-title { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 16px; }
+    #diferenciais .dif-sub { text-align: center; font-size: 1rem; color: var(--gray-text); max-width: 640px; margin: 0 auto 56px; line-height: 1.7; }
+
+    .dif-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .dif-card {
+      background: #fff; border-radius: 16px; padding: 28px 24px;
+      border-left: 4px solid var(--acc);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .dif-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.09); }
+    .dif-icon  { font-size: 2.2rem; margin-bottom: 12px; }
+    .dif-title { font-family: var(--title-font); font-weight: 900; font-size: 1.05rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 6px; }
+    .dif-text  { font-size: .88rem; color: var(--gray-text); line-height: 1.6; }
+
+    /* ===== DEPOIMENTOS ===== */
+    #depoimentos { padding: 100px 0 80px; background: #fff; }
+    #depoimentos .section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--blue); text-align: center; margin-bottom: 12px; }
+    #depoimentos .dep-sub { text-align: center; color: var(--gray-text); font-size: 1rem; margin-bottom: 56px; }
+
+    .carousel-wrapper { position: relative; overflow: hidden; }
+    .carousel-track   { display: flex; gap: 24px; transition: transform .45s cubic-bezier(.4,0,.2,1); }
+    .dep-card { background: var(--gray-bg); border-radius: 16px; padding: 28px; flex-shrink: 0; border-top: 3px solid var(--acc); }
+    .dep-stars { color: var(--acc); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .dep-text  { font-size: .93rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .dep-author { display: flex; align-items: center; gap: 12px; }
+    .dep-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; color: #fff; flex-shrink: 0; background: var(--acc); }
+    .dep-name  { font-weight: 700; font-size: .9rem; color: var(--blue); }
+    .dep-role  { font-size: .78rem; color: #aaa; font-family: var(--cond-font); }
+
+    .carousel-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 32px; }
+    .carousel-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--acc); background: #fff; color: var(--acc); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s; }
+    .carousel-btn:hover { background: var(--acc); color: #fff; }
+    .carousel-dots { display: flex; gap: 8px; }
+    .carousel-dot  { width: 8px; height: 8px; border-radius: 50%; background: #ccc; cursor: pointer; transition: background .2s, transform .2s; border: none; }
+    .carousel-dot.active { background: var(--acc); transform: scale(1.3); }
+
+    /* ===== UNIDADES ===== */
+    #unidades { padding: 100px 0 80px; background: var(--gray-bg); }
+    #unidades .section-title { font-size: clamp(1.6rem, 2.8vw, 2.4rem); color: var(--blue); text-align: center; margin-bottom: 56px; }
+
+    .unidades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+    .unidade-card { background: #fff; border: 1.5px solid #e8eaf0; border-radius: 20px; padding: 32px; transition: box-shadow .25s, border-color .25s; }
+    .unidade-card:hover { box-shadow: 0 8px 32px rgba(12,48,108,.1); border-color: var(--acc); }
+    .unidade-name { font-family: var(--title-font); font-weight: 900; font-size: 1.4rem; letter-spacing: -0.03em; color: var(--blue); margin-bottom: 16px; }
+    .unidade-info { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .unidade-row  { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; color: var(--gray-text); }
+    .unidade-row svg { flex-shrink: 0; margin-top: 2px; opacity: .6; }
+    .unidade-map  { width: 100%; height: 220px; border-radius: 12px; overflow: hidden; margin-bottom: 16px; background: var(--gray-bg); }
+    .unidade-map img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== FAQ ===== */
+    #faq { padding: 100px 0 80px; background: #fff; }
+    #faq .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--blue); text-align: center; margin-bottom: 48px; }
+
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { border: 1.5px solid #e8eaf0; border-radius: 12px; overflow: hidden; }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; background: #fff; cursor: pointer; border: none;
+      font-family: var(--body-font); font-size: .95rem; font-weight: 700; color: var(--blue);
+      text-align: left; gap: 12px; transition: background .2s;
+    }
+    .faq-q:hover { background: var(--acc-light); }
+    .faq-chevron { font-size: 1.1rem; flex-shrink: 0; transition: transform .3s; color: var(--acc); }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 24px 20px; font-size: .9rem; color: var(--gray-text); line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ===== CTA FINAL ===== */
+    #cta-final { background: var(--blue); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+    #cta-final::before { content: ''; position: absolute; top: -70px; left: 0; width: 100%; height: 70px; background: var(--gray-bg); clip-path: ellipse(55% 100% at 50% 0%); }
+    #cta-final .bg-orb { position: absolute; border-radius: 50%; pointer-events: none; }
+    #cta-final .orb-1 { width: 600px; height: 600px; background: rgba(255,107,53,.06); top: -200px; right: -150px; }
+    #cta-final .orb-2 { width: 400px; height: 400px; background: rgba(255,209,102,.04); bottom: -150px; left: -100px; }
+
+    #cta-final .section-title { font-size: clamp(2rem, 4vw, 3.4rem); color: #fff; margin-bottom: 16px; position: relative; }
+    #cta-final .section-title span { color: var(--acc2); }
+    #cta-final .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.82); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+
+    .cta-final-form { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 40px 36px; box-shadow: 0 16px 56px rgba(0,0,0,.25); position: relative; border-top: 4px solid var(--acc); }
+    .cta-final-form h3 { font-family: var(--title-font); font-weight: 900; font-size: 1.6rem; letter-spacing: -0.04em; color: var(--blue); margin-bottom: 6px; }
+    .cta-final-form .form-sub { font-size: .88rem; color: var(--gray-text); margin-bottom: 22px; line-height: 1.5; }
+
+    /* ===== FOOTER ===== */
+    #footer { background: #09224e; color: rgba(255,255,255,.7); padding: 60px 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand .footer-logo { height: 40px; margin-bottom: 16px; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 20px; }
+    .social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background .2s; color: #fff; }
+    .social-link:hover { background: var(--acc); color: #fff; }
+    .social-link svg { width: 18px; height: 18px; }
+    .footer-col h4 { color: #fff; font-family: var(--cond-font); font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--acc2); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .8rem; }
+    .footer-bottom a:hover { color: var(--acc2); }
+
+    /* WHATSAPP */
+    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,.25); text-decoration: none; transition: transform .2s; }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* MODAL WHATSAPP */
+    .wa-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+    .wa-modal.show { display: flex; opacity: 1; }
+    .wa-modal-content { background-color: #fff; border-radius: 16px; padding: 30px; width: 90%; max-width: 360px; text-align: center; position: relative; transform: translateY(20px); transition: transform 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,.2); }
+    .wa-modal.show .wa-modal-content { transform: translateY(0); }
+    .wa-modal-close { position: absolute; top: 12px; right: 16px; font-size: 1.8rem; font-weight: bold; color: #aaa; cursor: pointer; line-height: 1; border: none; background: none; }
+    .wa-modal-close:hover { color: #333; }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .dif-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 960px) {
+      #hero { padding: 60px 0 110px; }
+      #hero .container { grid-template-columns: 1fr; }
+      .hero-left { text-align: center; }
+      .hero-brand { justify-content: center; }
+      .hero-date-bar { justify-content: center; }
+      .hero-activities-row { grid-template-columns: repeat(2, 1fr); }
+      .ativ-grid { grid-template-columns: 1fr; }
+      .cf-steps { grid-template-columns: 1fr; gap: 40px; }
+      .cf-steps::before { display: none; }
+      .cf-step { padding: 0 16px; }
+      .cf-info-bar { flex-direction: column; text-align: center; gap: 16px; }
+      .unidades-grid { grid-template-columns: 1fr; }
+      #atividades, #como-funciona, #diferenciais, #depoimentos, #unidades, #faq, #cta-final { padding-top: 72px; padding-bottom: 56px; }
+    }
+    @media (max-width: 640px) {
+      #site-header nav { display: none; }
+      #site-header nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--blue); padding: 20px 24px; gap: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.2); z-index: 99; }
+      .hamburger { display: flex; }
+      .container { padding: 0 16px; }
+      #hero { padding: 40px 0 100px; }
+      .hero-form-card { padding: 24px 16px; }
+      .cta-final-form { padding: 28px 16px; }
+      .dif-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .stats-grid { flex-direction: column; gap: 24px; }
+    }
+    @media (max-width: 400px) { .container { padding: 0 12px; } }
+  
+    /* Modal Whatsapp */
+    .wa-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+    .wa-modal.show { display: flex; opacity: 1; }
+    .wa-modal-content { background-color: #fefefe; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; position: relative; transform: translateY(-20px); transition: transform 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+    .wa-modal.show .wa-modal-content { transform: translateY(0); }
+    .wa-modal-close { color: #aaa; position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.2s; }
+    .wa-modal-close:hover { color: var(--blue); }
+
+    /* SECAO CURSOS - HUB */
+    #cursos { padding: 100px 0 80px; background: var(--gray-bg); }
+    #cursos .section-title { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--blue); text-align: center; margin-bottom: 12px; }
+    #cursos .cursos-sub { text-align: center; color: var(--gray-text); font-size: 1rem; max-width: 600px; margin: 0 auto 56px; line-height: 1.7; }
+
+    .cursos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-bottom: 48px; }
+    .curso-card { background: #fff; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,.07); transition: transform .25s, box-shadow .25s; }
+    .curso-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.12); }
+    .curso-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+    .curso-card.code::before    { background: var(--green);  }
+    .curso-card.money::before   { background: var(--yellow); }
+    .curso-card.speech::before  { background: var(--red);    }
+    .curso-card.english::before { background: var(--orange); }
+
+    .curso-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+    .curso-orb { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+    .curso-card.code .curso-orb    { background: var(--green);  }
+    .curso-card.money .curso-orb   { background: var(--yellow); }
+    .curso-card.speech .curso-orb  { background: var(--red);    }
+    .curso-card.english .curso-orb { background: var(--orange); }
+
+    .curso-name    { font-family: var(--title-font); font-weight: 900; font-size: 1.5rem; letter-spacing: -0.03em; color: var(--blue); }
+    .curso-tagline { font-family: var(--condensed-font); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: #aaa; }
+    .curso-desc    { font-size: .95rem; color: var(--gray-text); line-height: 1.65; margin-bottom: 20px; }
+    .curso-footer  { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .curso-age { font-family: var(--condensed-font); font-size: .8rem; color: #aaa; display: flex; align-items: center; gap: 6px; }
+    .curso-age::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+    .curso-card.code .curso-age::before    { background: var(--green);  }
+    .curso-card.money .curso-age::before   { background: var(--yellow); }
+    .curso-card.speech .curso-age::before  { background: var(--red);    }
+    .curso-card.english .curso-age::before { background: var(--orange); }
+
+    .btn-curso { padding: 10px 22px; border-radius: 8px; font-size: .85rem; font-weight: 700; text-decoration: none; transition: opacity .2s, transform .2s; }
+    .btn-curso:hover { opacity: .85; transform: translateY(-1px); }
+    .curso-card.code .btn-curso    { background: var(--green);  color: #fff; }
+    .curso-card.money .btn-curso   { background: var(--yellow); color: var(--blue); }
+    .curso-card.speech .btn-curso  { background: var(--red);    color: #fff; }
+    .curso-card.english .btn-curso { background: var(--orange); color: #fff; }
+
+    .cursos-cta-box { text-align: center; padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    .cursos-cta-box p { font-size: 1.05rem; color: var(--gray-text); margin-bottom: 16px; }
+    .cursos-cta-box strong { color: var(--blue); }
+</style>
+</head>
+<body>
+
+<!-- URGENCY BANNER -->
+<div id="urgency-bar">
+  <p>&#9889; <span>6 a 24 de julho</span> &nbsp;·&nbsp; Vagas limitadas! &nbsp;·&nbsp; Garanta a vaga do seu filho agora &#9889;</p>
+</div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="logo/logo_branco.png" alt="Happy Brasília" />
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="#atividades">Atividades</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#contato" class="nav-cta">Garantir vaga</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SEC 1: HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-left">
+      <div class="hero-brand">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" />
+        <div class="hero-brand-div"></div>
+        <span class="hero-brand-label">&#127774; Colônia de Férias · Brasília</span>
+      </div>
+
+      <div class="event-badge">
+        <span class="event-badge-dot"></span>
+        Inscrições abertas &nbsp;·&nbsp; Julho 2025
+      </div>
+
+      <h1>Férias chegando e seu filho ainda não sabe o que vai <span>fazer?</span></h1>
+
+      <p class="hero-sub">
+        A Happy Brasília tem a resposta — e ela é incrível! Três semanas de aprendizado, criatividade e muita diversão em um lugar que prepara de verdade para o futuro.
+      </p>
+
+      <div class="hero-date-bar">
+        <div class="hero-date-pill">
+          &#128197; <span><strong>6 a 24 de julho</strong></span>
+        </div>
+        <div class="hero-date-pill">
+          &#128205; <span><strong>910 Sul</strong> — Asa Sul</span>
+        </div>
+        <div class="hero-date-pill">
+          &#128205; <span><strong>711 Norte</strong> — Asa Norte</span>
+        </div>
+        <div class="hero-date-pill">
+          &#9203; <span><strong>3 semanas</strong> de diversão</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Formulario -->
+    <div>
+      <div class="hero-form-card" id="contato">
+        <h2>Garanta a vaga do seu filho!</h2>
+        <p class="form-sub">Vagas limitadas! Preencha e nossa equipe entra em contato.</p>
+
+        <form id="form-hero" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <input type="text" name="nome_responsavel" placeholder="Nome do responsável *" required />
+          </div>
+          <div class="form-group">
+            <input type="text" name="nome_crianca" placeholder="Nome da criança/jovem *" required />
+          </div>
+          <div class="form-group">
+            <input type="number" name="idade" placeholder="Idade da criança *" min="5" max="16" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="E-mail *" required />
+          </div>
+          <div class="form-group">
+            <select name="unidade" required>
+              <option value="" disabled selected>Unidade de interesse *</option>
+              <option value="910 Sul">910 Sul</option>
+              <option value="711 Norte">711 Norte</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-acc btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
+            QUERO GARANTIR A VAGA!
+          </button>
+          <p class="form-privacy">&#128274; Seus dados estão seguros. Não enviamos spam.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Atividades visuais — linha completa -->
+    <div class="hero-activities-row">
+      <div class="hero-act-card">
+        <span class="hero-act-emoji">&#129670;</span>
+        <div class="hero-act-name">Minecraft Education</div>
+        <div class="hero-act-desc">Criar mundos, aprender lógica e colaborar em equipe</div>
+      </div>
+      <div class="hero-act-card">
+        <span class="hero-act-emoji">&#127918;</span>
+        <div class="hero-act-name">Games 2D</div>
+        <div class="hero-act-desc">Desenvolver o próprio jogo do zero, na prática</div>
+      </div>
+      <div class="hero-act-card">
+        <span class="hero-act-emoji">&#128187;</span>
+        <div class="hero-act-name">Pequenos Programadores</div>
+        <div class="hero-act-desc">Primeiros passos em programação de um jeito lúdico</div>
+      </div>
+      <div class="hero-act-card">
+        <span class="hero-act-emoji">&#128247;</span>
+        <div class="hero-act-name">Conteúdo Digital</div>
+        <div class="hero-act-desc">Criar, editar e produzir conteúdo digital de verdade</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="highlight-stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <span class="stat-number">3</span>
+        <span class="stat-label">semanas de imersão</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number">4</span>
+        <span class="stat-label">oficinas tecnológicas</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number">+80 mil</span>
+        <span class="stat-label">alunos na Happy Brasil</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">aprendizado na prática</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 2: ATIVIDADES -->
+<section id="atividades">
+  <div class="container">
+    <h2 class="section-title fade-in">O que seu filho vai aprender na Colônia?</h2>
+    <p class="ativ-sub fade-in">
+      Quatro oficinas pensadas para unir diversão e aprendizado real. Do Minecraft ao desenvolvimento de jogos, seu filho sai das férias com habilidades do futuro.
+    </p>
+
+    <div class="ativ-grid">
+      <!-- Card 1: Minecraft Education -->
+      <div class="ativ-card fade-in">
+        <div class="ativ-header">
+          <div class="ativ-emoji-wrap">&#129670;</div>
+          <div class="ativ-name">Minecraft Education</div>
+          <div class="ativ-tag">Criatividade & Lógica</div>
+        </div>
+        <div class="ativ-body">
+          <p class="ativ-desc">
+            Muito além do jogo: no Minecraft Education, os alunos constroem mundos, resolvem desafios e aprendem conceitos reais de programação, matemática e trabalho em equipe — tudo enquanto se divertem.
+          </p>
+          <div class="ativ-list">
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Criação de mundos e construções temáticas</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Lógica de jogo e resolução de problemas</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Trabalho colaborativo em equipe</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Introdução a comandos e automação no jogo</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Games 2D -->
+      <div class="ativ-card fade-in">
+        <div class="ativ-header">
+          <div class="ativ-emoji-wrap">&#127918;</div>
+          <div class="ativ-name">Games 2D</div>
+          <div class="ativ-tag">Desenvolvimento de Jogos</div>
+        </div>
+        <div class="ativ-body">
+          <p class="ativ-desc">
+            Seu filho deixa de só jogar e passa a criar o próprio jogo do zero. Na oficina de Games 2D, eles aprendem lógica de programação enquanto desenvolvem personagens, fases e mecânicas de um jogo real.
+          </p>
+          <div class="ativ-list">
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Criação de personagens e cenários</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Lógica de programação aplicada a jogos</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Design de fases e mecânicas de gameplay</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Apresentação do jogo criado para os colegas</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Pequenos Programadores -->
+      <div class="ativ-card fade-in">
+        <div class="ativ-header">
+          <div class="ativ-emoji-wrap">&#128187;</div>
+          <div class="ativ-name">Pequenos Programadores</div>
+          <div class="ativ-tag">Programação Iniciante</div>
+        </div>
+        <div class="ativ-body">
+          <p class="ativ-desc">
+            Os primeiros passos na programação de um jeito leve e divertido. Os pequenos aprendem a pensar como programadores, criam projetos simples e desenvolvem raciocínio lógico desde cedo.
+          </p>
+          <div class="ativ-list">
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Lógica de programação com blocos visuais</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Criação de animações e histórias interativas</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Introdução ao pensamento computacional</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Mini projetos para levar para casa</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Conteúdo Digital -->
+      <div class="ativ-card fade-in">
+        <div class="ativ-header">
+          <div class="ativ-emoji-wrap">&#128247;</div>
+          <div class="ativ-name">Conteúdo Digital</div>
+          <div class="ativ-tag">Criação & Comunicação</div>
+        </div>
+        <div class="ativ-body">
+          <p class="ativ-desc">
+            Na era das redes sociais, saber produzir conteúdo é uma habilidade poderosa. Os alunos aprendem a criar, editar e comunicar ideias de forma criativa — com propósito e responsabilidade digital.
+          </p>
+          <div class="ativ-list">
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Produção de vídeos e fotos temáticas</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Edição básica de conteúdo digital</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Storytelling e comunicação criativa</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Uso responsável e seguro da internet</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 3: COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="container">
+    <h2 class="section-title fade-in">Como é a Colônia de Férias Happy?</h2>
+    <p class="cf-sub fade-in">
+      Tudo do jeito Happy: divertido, moderno e cheio de propósito. Cada dia é uma nova aventura tecnológica com atividades práticas, desafios em equipe e muito aprendizado.
+    </p>
+
+    <div class="cf-steps">
+      <div class="cf-step fade-in">
+        <div class="cf-step-num">&#127775;</div>
+        <div class="cf-step-label">Momento 1</div>
+        <h3>Acolhida & Desafio</h3>
+        <p>O dia começa com uma atividade de aquecimento, apresentação do desafio do dia e formação das equipes.</p>
+      </div>
+      <div class="cf-step fade-in">
+        <div class="cf-step-num">&#128296;</div>
+        <div class="cf-step-label">Momento 2</div>
+        <h3>Mão na Massa</h3>
+        <p>Os alunos mergulham na oficina do dia — programando, criando, construindo e resolvendo desafios reais.</p>
+      </div>
+      <div class="cf-step fade-in">
+        <div class="cf-step-num">&#127942;</div>
+        <div class="cf-step-label">Momento 3</div>
+        <h3>Apresentação & Celebração</h3>
+        <p>Cada equipe apresenta o que criou, celebra as conquistas e leva aprendizados concretos para casa.</p>
+      </div>
+    </div>
+
+    <div class="cf-info-bar fade-in">
+      <div class="cf-info-text">
+        <span>6 a 24</span> de julho &nbsp;&#183;&nbsp; <span>910 Sul</span> — Asa Sul &nbsp;&#183;&nbsp; <span>3</span> semanas inesquecíveis
+      </div>
+      <a href="#contato" class="btn btn-acc">QUERO GARANTIR A VAGA</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 4: DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="container">
+    <h2 class="section-title fade-in">Por que escolher a Colônia Happy?</h2>
+    <p class="dif-sub fade-in">Seu filho vai passar as férias de julho de um jeito que vai fazer diferença no ano todo — e na vida.</p>
+
+    <div class="dif-grid">
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#129504;</div>
+        <div class="dif-title">Aprendizado real na prática</div>
+        <p class="dif-text">Nada de aula teórica. Cada dia seu filho cria, programa e resolve desafios concretos com tecnologia.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#127775;</div>
+        <div class="dif-title">Metodologia premiada</div>
+        <p class="dif-text">Marca com +80 mil alunos no Brasil, premiada pela ABF e Great Place to Work. Referência nacional em edtech.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#128101;</div>
+        <div class="dif-title">Turmas pequenas e focadas</div>
+        <p class="dif-text">Grupos reduzidos para garantir atenção individualizada e uma experiência de qualidade para cada criança.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#128104;&#8205;&#127979;</div>
+        <div class="dif-title">Instrutores especializados</div>
+        <p class="dif-text">Equipe treinada pela Happy, apaixonada por educação e tecnologia, com experiência com crianças e adolescentes.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#127918;</div>
+        <div class="dif-title">Espaço gamer e moderno</div>
+        <p class="dif-text">Estrutura completa na Asa Sul com espaço gamer, computadores modernos e ambiente pensado para aprender se divertindo.</p>
+      </div>
+      <div class="dif-card fade-in">
+        <div class="dif-icon">&#128663;</div>
+        <div class="dif-title">Estacionamento facilitado</div>
+        <p class="dif-text">Unidade da Asa Sul com voucher de garagem para facilitar a chegada e saída dos pais no dia a dia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 5: DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <h2 class="section-title fade-in">O que as famílias dizem sobre a Happy</h2>
+    <p class="dep-sub fade-in">Avaliações reais de pais e responsáveis de alunos da Happy Brasília</p>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track">
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Meu filho amou cada dia na Happy! Voltou das férias falando de programação, criando jogos no computador e cheio de histórias para contar. Superou todas as expectativas."</p>
+          <div class="dep-author">
+            <div class="dep-avatar">M</div>
+            <div class="dep-info">
+              <div class="dep-name">Mariana Costa</div>
+              <div class="dep-role">Mãe de aluno — Avaliação Google</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Meu filho de 10 anos adora a Happy! Junta diversão com aprendizado. Lá ele teve contato com tecnologia, programação, uso de IA de forma responsável e sempre quer voltar. Recomendo de olhos fechados. Nota 1000!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar" style="background:#9B59B6">D</div>
+            <div class="dep-info">
+              <div class="dep-name">Diana Leite Nunes dos Santos</div>
+              <div class="dep-role">Avaliação Google</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Excelente escola! Meu filho teve contato com tecnologia de forma leve e divertida, aprendendo na prática. Já nas primeiras aulas percebi evolução no raciocínio e na criatividade. Muito satisfeito com o resultado!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar" style="background:#27AE60">I</div>
+            <div class="dep-info">
+              <div class="dep-name">Ismael Viana</div>
+              <div class="dep-role">Avaliação Google</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"Indico a Happy para todos os pais que querem ver seus filhos aprender de forma divertida. A estrutura é ótima, os professores são incríveis e minha filha chega animada todo dia."</p>
+          <div class="dep-author">
+            <div class="dep-avatar" style="background:#E91E8C">A</div>
+            <div class="dep-info">
+              <div class="dep-name">Ana Beatriz Ferreira</div>
+              <div class="dep-role">Avaliação Google</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="dep-text">"A Happy foi a melhor escolha para as férias do meu filho. Ele se desenvolveu muito, fez amigos e ainda aprendeu programação. Vai repetir com certeza no próximo recesso!"</p>
+          <div class="dep-author">
+            <div class="dep-avatar" style="background:#FF6B35">R</div>
+            <div class="dep-info">
+              <div class="dep-name">Roberto Almeida</div>
+              <div class="dep-role">Avaliação Google</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">&#8592;</button>
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <button class="carousel-btn" id="carousel-next" aria-label="Próximo">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 6: UNIDADES -->
+<section id="unidades">
+  <div class="container">
+    <h2 class="section-title fade-in">Onde acontece a Colônia de Férias</h2>
+
+    <div class="unidades-grid">
+      <div class="unidade-card fade-in">
+        <div class="unidade-name">Happy Brasília — Asa Sul</div>
+        <div class="unidade-info">
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>910 Sul — Mix Park Sul, Bloco D</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            <span>(61) 3244-2510</span>
+          </div>
+        </div>
+        <div class="unidade-map">
+          <img src="img/unidade-asa-sul.jpeg" alt="Happy Brasília Asa Sul" />
+        </div>
+        <a href="https://wa.me/556132442510" target="_blank" class="btn btn-acc btn-full">
+          FALAR COM ESTA UNIDADE
+        </a>
+      </div>
+
+      <div class="unidade-card fade-in">
+        <div class="unidade-name">Happy Brasília — Asa Norte</div>
+        <div class="unidade-info">
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>SHCGN 710/711 loja 27 — Asa Norte</span>
+          </div>
+          <div class="unidade-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            <span>(61) 99637-4604</span>
+          </div>
+        </div>
+        <div class="unidade-map">
+          <img src="img/unidade-asa-norte.webp" alt="Happy Brasília Asa Norte" />
+        </div>
+        <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-acc btn-full">
+          FALAR COM ESTA UNIDADE
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 7: FAQ -->
+<section id="faq">
+  <div class="container">
+    <h2 class="section-title fade-in">Perguntas frequentes</h2>
+
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Qual a faixa etária da Colônia de Férias?
+          <span class="faq-chevron">&#8964;</span>
+        </button>
+        <div class="faq-a">A Colônia de Férias Happy é ideal para crianças e adolescentes de 7 a 15 anos. As atividades são adaptadas por faixa etária para garantir o melhor aproveitamento de cada participante.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Meu filho precisa ter experiência com tecnologia para participar?
+          <span class="faq-chevron">&#8964;</span>
+        </button>
+        <div class="faq-a">Não! As atividades são pensadas para todos os níveis, do iniciante ao mais experiente. Nossos instrutores adaptam o conteúdo para que cada criança avance no seu próprio ritmo.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Qual o período de funcionamento da Colônia?
+          <span class="faq-chevron">&#8964;</span>
+        </button>
+        <div class="faq-a">A Colônia de Férias acontece de 6 a 24 de julho de 2025. Entre em contato com nossa equipe para saber os horários disponíveis e demais informações sobre a grade de atividades.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Meu filho pode fazer mais de uma atividade?
+          <span class="faq-chevron">&#8964;</span>
+        </button>
+        <div class="faq-a">Sim! A Colônia é estruturada para que os participantes passem por diferentes oficinas ao longo das três semanas, vivenciando todas as experiências que a Happy tem a oferecer.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          As vagas são realmente limitadas?
+          <span class="faq-chevron">&#8964;</span>
+        </button>
+        <div class="faq-a">Sim. Para garantir a qualidade do atendimento e uma experiência personalizada, trabalhamos com turmas pequenas. Por isso, recomendamos garantir a vaga o quanto antes para não ficar de fora.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Como funciona a inscrição?
+          <span class="faq-chevron">&#8964;</span>
+        </button>
+        <div class="faq-a">Preencha o formulário nesta página ou entre em contato pelo WhatsApp. Nossa equipe vai retornar em breve com todas as informações sobre valores, horários e confirmação da vaga.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 8: CTA FINAL -->
+<section id="cursos">
+  <div class="container">
+    <h2 class="section-title fade-in">Escolha o caminho do seu filho</h2>
+    <p class="cursos-sub fade-in">Cada curso foi criado para desenvolver uma habilidade essencial. Seu filho pode fazer um ou vários, a Happy é um hub completo.</p>
+
+    <div class="cursos-grid">
+      <div class="curso-card code fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/code-icon.png" alt="Happy Code" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Code</div>
+            <div class="curso-tagline">programação e tecnologia</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho deixa de só jogar e passa a criar. Do raciocínio lógico ao primeiro jogo digital.</p>
+        <div class="curso-footer">
+          <span class="curso-age">5 a 17 anos</span>
+          <a href="happy-code.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card money fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/money-icon.png" alt="Happy Money" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Money</div>
+            <div class="curso-tagline">educação financeira</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho aprende a cuidar do dinheiro, investir e construir o sonho de um futuro próspero, brincando.</p>
+        <div class="curso-footer">
+          <span class="curso-age">10 a 14 anos</span>
+          <a href="happy-money.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card speech fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/speech-icone.png" alt="Happy Speech" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy Speech</div>
+            <div class="curso-tagline">comunicação e oratória</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho ganha voz, confiança e inteligência emocional para se comunicar com o mundo.</p>
+        <div class="curso-footer">
+          <span class="curso-age">10 a 17 anos</span>
+          <a href="happy-speech.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+
+      <div class="curso-card english fade-in">
+        <div class="curso-card-header">
+          <div class="curso-orb"><img src="logo/icones/english-icon.png" alt="Happy English" style="width: 36px; height: 36px; object-fit: contain;"></div>
+          <div class="curso-label">
+            <div class="curso-name">Happy English</div>
+            <div class="curso-tagline">inglês do básico à fluência</div>
+          </div>
+        </div>
+        <p class="curso-desc">Seu filho aprende inglês de verdade, com liberdade, confiança e metodologia que vai muito além da gramática.</p>
+        <div class="curso-footer">
+          <span class="curso-age">5 a 17+ anos</span>
+          <a href="happy-english.html" class="btn-curso">SAIBA MAIS</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursos-cta-box fade-in">
+      <p><strong>Não sabe qual curso escolher?</strong> Nossa equipe te ajuda a encontrar o caminho certo para o seu filho.</p>
+      <a href="#contato" class="btn btn-blue" style="padding:14px 36px;">FALE COM A GENTE</a>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="container">
+    <h2 class="section-title fade-in">As vagas são limitadas. <span>Julho chega rápido!</span></h2>
+    <p class="cta-sub fade-in">Não deixa seu filho de fora. Garanta agora a vaga na Colônia de Férias Happy e dê a ele 3 semanas de aprendizado, criatividade e muita diversão.</p>
+
+    <div class="cta-final-form fade-in">
+      <h3>Garanta a vaga do seu filho!</h3>
+      <p class="form-sub">Vagas limitadas! Preencha e nossa equipe entra em contato.</p>
+
+      <form id="form-final" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <input type="text" name="nome_responsavel" placeholder="Nome do responsável *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="nome_crianca" placeholder="Nome da criança/jovem *" required />
+        </div>
+        <div class="form-group">
+          <input type="number" name="idade" placeholder="Idade da criança *" min="5" max="16" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="E-mail *" required />
+        </div>
+        <div class="form-group">
+          <select name="unidade" required>
+            <option value="" disabled selected>Unidade de interesse *</option>
+            <option value="910 Sul">910 Sul</option>
+            <option value="711 Norte">711 Norte</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-acc btn-full" style="font-size:1.05rem;letter-spacing:.05em;padding:18px;">
+          QUERO GARANTIR A VAGA AGORA!
+        </button>
+        <p class="form-privacy">&#128274; Seus dados estão seguros. Não enviamos spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" class="footer-logo" />
+        <p>Colônia de Férias Happy Brasília: tecnologia, criatividade e diversão para crianças e jovens de 7 a 15 anos. De 6 a 24 de julho.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/happybrasilia" target="_blank" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://facebook.com/happybrasilia" target="_blank" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" onclick="openWaModal(event)" class="social-link" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">&#8592; Voltar para Happy Brasília</a></li>
+          <li><a href="#atividades">Atividades</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#unidades">Unidades</a></li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://instagram.com/happybrasilia" target="_blank">@happybrasilia</a></li>
+          <li><a href="https://wa.me/556132442510" target="_blank">WhatsApp Asa Sul</a></li>
+          <li><a href="https://wa.me/5561996374604" target="_blank">WhatsApp Asa Norte</a></li>
+          <li><a href="https://happybrasilia.com" target="_blank">happybrasilia.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&#169; 2025 Happy Brasília. Todos os direitos reservados.</p>
+      <a href="#">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="#" onclick="openWaModal(event)" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  /* HAMBURGER */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav').classList.toggle('open');
+  });
+
+  /* FADE IN */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* FAQ */
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* CAROUSEL */
+  const track = document.getElementById('carousel-track');
+  const wrapper = track.parentElement;
+  const dotsContainer = document.getElementById('carousel-dots');
+  const cards = track.querySelectorAll('.dep-card');
+  const GAP = 24;
+  let currentIndex = 0;
+
+  function getVisible() { return window.innerWidth < 640 ? 1 : window.innerWidth < 960 ? 2 : 3; }
+  function getTotalSlides() { return Math.ceil(cards.length / getVisible()); }
+  function getCardWidth() { return (wrapper.offsetWidth - GAP * (getVisible() - 1)) / getVisible(); }
+
+  function setCardWidths() {
+    const w = getCardWidth();
+    cards.forEach(c => { c.style.width = w + 'px'; });
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < getTotalSlides(); i++) {
+      const d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    const total = getTotalSlides();
+    currentIndex = Math.max(0, Math.min(index, total - 1));
+    track.style.transform = 'translateX(-' + (currentIndex * getVisible() * (getCardWidth() + GAP)) + 'px)';
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+
+  document.getElementById('carousel-prev').addEventListener('click', () => goTo(currentIndex - 1));
+  document.getElementById('carousel-next').addEventListener('click', () => goTo(currentIndex + 1));
+
+  setCardWidths(); buildDots();
+  window.addEventListener('resize', () => { setCardWidths(); buildDots(); goTo(0); });
+  setInterval(() => goTo((currentIndex + 1) % getTotalSlides()), 5000);
+
+  /* FORM */
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
+    btn.textContent = 'Enviado! Entraremos em contato.';
+    btn.style.background = '#28a745';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+    e.target.reset();
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 5000);
+  }
+</script>
+
+<!-- MODAL WHATSAPP -->
+<div id="wa-modal" class="wa-modal">
+  <div class="wa-modal-content">
+    <span class="wa-modal-close" onclick="closeWaModal()">&times;</span>
+    <h3 style="font-family: var(--title-font); color: var(--blue); margin-bottom: 10px; font-size: 1.4rem;">Escolha uma unidade</h3>
+    <p style="color: var(--gray-text); margin-bottom: 20px; font-size: .95rem;">Com qual unidade você deseja falar?</p>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <a href="https://wa.me/556132442510" target="_blank" class="btn btn-acc btn-full" onclick="closeWaModal()">910 Sul — Asa Sul</a>
+      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">711 Norte — Asa Norte</a>
+    </div>
+  </div>
+</div>
+<script>
+  function openWaModal(e) {
+    e.preventDefault();
+    document.getElementById('wa-modal').classList.add('show');
+  }
+  function closeWaModal() {
+    document.getElementById('wa-modal').classList.remove('show');
+  }
+  window.addEventListener('click', function(e) {
+    var modal = document.getElementById('wa-modal');
+    if (e.target === modal) closeWaModal();
+  });
+</script>
+
+<!-- MODAL WHATSAPP -->
+<div id="wa-modal" class="wa-modal">
+  <div class="wa-modal-content">
+    <span class="wa-modal-close" onclick="closeWaModal()">&times;</span>
+    <h3 style="font-family: var(--title-font); color: var(--blue); margin-bottom: 10px; font-size: 1.4rem;">Escolha uma unidade</h3>
+    <p style="color: var(--gray-text); margin-bottom: 20px; font-size: .95rem;">Com qual unidade você deseja falar?</p>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <a href="https://wa.me/556132442510" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Sul</a>
+      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Norte</a>
+    </div>
+  </div>
+</div>
+<script>
+  function openWaModal(e) {
+    e.preventDefault();
+    document.getElementById('wa-modal').classList.add('show');
+  }
+  function closeWaModal() {
+    document.getElementById('wa-modal').classList.remove('show');
+  }
+  window.addEventListener('click', function(e) {
+    var modal = document.getElementById('wa-modal');
+    if (e.target === modal) {
+      closeWaModal();
+    }
+  });
+</script>
+</body>
+</html>
