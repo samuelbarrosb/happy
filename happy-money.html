@@ -70,6 +70,8 @@
     }
     #site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     #site-header .logo img  { height: 44px; width: auto; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-sub-brand { color: rgba(255,255,255,.7); font-family: var(--cond-font); font-size: .72rem; letter-spacing: .04em; line-height: 1.25; border-left: 1px solid rgba(255,255,255,.3); padding-left: 12px; text-transform: uppercase; }
     #site-header nav        { display: flex; gap: 28px; align-items: center; }
     #site-header nav a      { color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .2s; }
     #site-header nav a:hover { color: var(--yellow); }
@@ -192,6 +194,9 @@
       margin-bottom: 10px;
     }
     #proposta .prop-stat span { color: var(--yellow); }
+    #proposta .prop-source { text-align: center; margin-top: -4px; margin-bottom: 20px; }
+    #proposta .prop-source a { font-size: .72rem; color: #aaa; text-decoration: underline; }
+    #proposta .prop-source a:hover { color: var(--yellow); }
     #proposta .prop-lead { text-align: center; font-size: 1.15rem; color: var(--gray-text); font-style: italic; margin-bottom: 20px; }
     #proposta .prop-sub  { text-align: center; font-size: 1rem; color: var(--gray-text); max-width: 700px; margin: 0 auto 60px; line-height: 1.75; }
 
@@ -409,6 +414,7 @@
     }
     @media (max-width: 640px) {
       #site-header nav { display: none; }
+      .header-sub-brand { display: none; }
       #site-header nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--blue); padding: 20px 24px; gap: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.2); z-index: 99; }
       .hamburger { display: flex; }
       .container  { padding: 0 16px; }
@@ -500,9 +506,12 @@
 <!-- HEADER -->
 <header id="site-header">
   <div class="container">
-    <a href="index.html" class="logo">
-      <img src="logo/logo_branco.png" alt="Happy Brasília" />
-    </a>
+    <div class="header-brand">
+      <a href="index.html" class="logo">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" />
+      </a>
+      <span class="header-sub-brand">Asa Sul &amp; Asa Norte · Brasília</span>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -520,27 +529,6 @@
 <section id="hero">
   <div class="container">
     <div class="hero-left">
-      <div class="hero-brand">
-        <img src="logo/logo_branco.png" alt="Happy Brasília" />
-        <div class="hero-brand-div"></div>
-        <span class="hero-brand-label">&#128176; Happy Money · Brasília</span>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-num">96%</span>
-          <span class="hero-stat-text">sem educação financeira</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">10</span>
-          <span class="hero-stat-text">anos pra começar</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">1&#186;</span>
-          <span class="hero-stat-text">passo pro futuro</span>
-        </div>
-      </div>
-
       <h1>Seu filho sabe o que fazer com o <span>dinheiro</span> dele?</h1>
 
       <p class="hero-sub">
@@ -660,7 +648,8 @@
 <!-- SEC 2: PROPOSTA DE VALOR -->
 <section id="proposta">
   <div class="container">
-    <p class="prop-stat fade-in"><span>96%</span> dos brasileiros adultos não têm educação financeira.</p>
+    <p class="prop-stat fade-in">Nove em cada dez brasileiros gostariam de ter aprendido educação financeira na escola.</p>
+    <p class="prop-source fade-in"><a href="https://valor.globo.com/financas/noticia/2025/12/04/nove-em-cada-dez-brasileiros-gostariam-de-ter-aprendido-educacao-financeira-na-escola-diz-pesquisa.ghtml" target="_blank" rel="noopener">Confira aqui (valor.com.br)</a></p>
     <p class="prop-lead fade-in">Mas o seu filho não precisa fazer parte dessa estatística.</p>
     <p class="prop-sub fade-in">
       A maioria das pessoas chega na vida adulta sem saber poupar, investir ou lidar com dívidas, porque ninguém ensinou. No Happy Money, seu filho aprende brincando a cuidar do dinheiro, tomar decisões inteligentes e construir o sonho de um futuro próspero e feliz.
@@ -971,11 +960,6 @@
         <p class="diferencial-text">Excelência no ensino da língua inglesa com a qualidade reconhecida do Centro Britânico.</p>
       </div>
       <div class="diferencial-card fade-in">
-        <div class="diferencial-icon">&#129302;</div>
-        <div class="diferencial-title">Robôs Dash</div>
-        <p class="diferencial-text">Para os pequenos de 5 e 6 anos aprenderem programação na prática e com muita diversão.</p>
-      </div>
-      <div class="diferencial-card fade-in">
         <div class="diferencial-icon">&#127941;</div>
         <div class="diferencial-title">Competições Internas</div>
         <p class="diferencial-text">Eventos com premiação, como o Ideathon, para estimular o desenvolvimento e a criatividade.</p>
@@ -1009,7 +993,7 @@
             <div class="curso-tagline">programação e tecnologia</div>
           </div>
         </div>
-        <p class="curso-desc">Seu filho deixa de só jogar e passa a criar. Do raciocínio lógico ao primeiro jogo digital.</p>
+        <p class="curso-desc">Seu filho passa a criar jogos e não apenas brincar. Do raciocínio lógico ao primeiro jogo digital.</p>
         <div class="curso-footer">
           <span class="curso-age">5 a 17 anos</span>
           <a href="happy-code.html" class="btn-curso">SAIBA MAIS</a>

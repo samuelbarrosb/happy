@@ -72,6 +72,8 @@
     }
     #site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     #site-header .logo img  { height: 44px; width: auto; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-sub-brand { color: rgba(255,255,255,.7); font-family: var(--cond-font); font-size: .72rem; letter-spacing: .04em; line-height: 1.25; border-left: 1px solid rgba(255,255,255,.3); padding-left: 12px; text-transform: uppercase; }
     #site-header nav        { display: flex; gap: 28px; align-items: center; }
     #site-header nav a      { color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .2s; }
     #site-header nav a:hover { color: var(--acc2); }
@@ -163,7 +165,7 @@
       transition: background .25s, transform .25s;
     }
     .hero-act-card:hover { background: rgba(255,107,53,.15); transform: translateY(-3px); }
-    .hero-act-emoji { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .hero-act-img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; display: block; }
     .hero-act-name {
       font-family: var(--title-font); font-weight: 900;
       font-size: 1.05rem; letter-spacing: -0.03em;
@@ -230,6 +232,7 @@
     .ativ-card:nth-child(2) { border-top-color: #9B59B6; }
     .ativ-card:nth-child(3) { border-top-color: #27AE60; }
     .ativ-card:nth-child(4) { border-top-color: #E91E8C; }
+    .ativ-card:nth-child(5) { border-top-color: #00ACC1; }
     .ativ-card:hover { transform: translateY(-6px); box-shadow: 0 14px 44px rgba(0,0,0,.12); }
 
     .ativ-header {
@@ -239,6 +242,7 @@
     .ativ-card:nth-child(2) .ativ-header { background: #5D2A8A; }
     .ativ-card:nth-child(3) .ativ-header { background: #1A6E3A; }
     .ativ-card:nth-child(4) .ativ-header { background: #8B0D53; }
+    .ativ-card:nth-child(5) .ativ-header { background: #006064; }
 
     .ativ-emoji-wrap {
       width: 72px; height: 72px; border-radius: 50%;
@@ -254,6 +258,7 @@
     .ativ-card:nth-child(2) .ativ-name { color: #CE93F7; }
     .ativ-card:nth-child(3) .ativ-name { color: #6EE0A0; }
     .ativ-card:nth-child(4) .ativ-name { color: #F980BE; }
+    .ativ-card:nth-child(5) .ativ-name { color: #80DEEA; }
     .ativ-tag {
       font-family: var(--cond-font); font-size: .75rem;
       text-transform: uppercase; letter-spacing: .08em;
@@ -268,6 +273,7 @@
     .ativ-card:nth-child(2) .ativ-dot { background: #9B59B6; }
     .ativ-card:nth-child(3) .ativ-dot { background: #27AE60; }
     .ativ-card:nth-child(4) .ativ-dot { background: #E91E8C; }
+    .ativ-card:nth-child(5) .ativ-dot { background: #00ACC1; }
 
     /* ===== COMO FUNCIONA ===== */
     #como-funciona { padding: 100px 0 80px; background: var(--blue); position: relative; overflow: hidden; }
@@ -448,6 +454,7 @@
     }
     @media (max-width: 640px) {
       #site-header nav { display: none; }
+      .header-sub-brand { display: none; }
       #site-header nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--blue); padding: 20px 24px; gap: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.2); z-index: 99; }
       .hamburger { display: flex; }
       .container { padding: 0 16px; }
@@ -526,9 +533,12 @@
 <!-- HEADER -->
 <header id="site-header">
   <div class="container">
-    <a href="index.html" class="logo">
-      <img src="logo/logo_branco.png" alt="Happy Brasília" />
-    </a>
+    <div class="header-brand">
+      <a href="index.html" class="logo">
+        <img src="logo/logo_branco.png" alt="Happy Brasília" />
+      </a>
+      <span class="header-sub-brand">Asa Sul &amp; Asa Norte · Brasília</span>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -546,21 +556,15 @@
 <section id="hero">
   <div class="container">
     <div class="hero-left">
-      <div class="hero-brand">
-        <img src="logo/logo_branco.png" alt="Happy Brasília" />
-        <div class="hero-brand-div"></div>
-        <span class="hero-brand-label">&#127774; Colônia de Férias · Brasília</span>
-      </div>
-
       <div class="event-badge">
         <span class="event-badge-dot"></span>
-        Inscrições abertas &nbsp;·&nbsp; Julho 2025
+        Inscrições abertas &nbsp;·&nbsp; Julho 2026
       </div>
 
       <h1>Férias chegando e seu filho ainda não sabe o que vai <span>fazer?</span></h1>
 
       <p class="hero-sub">
-        A Happy Brasília tem a resposta — e ela é incrível! Três semanas de aprendizado, criatividade e muita diversão em um lugar que prepara de verdade para o futuro.
+        A Happy Brasília tem a resposta e ela é incrível! Três semanas de aprendizado, criatividade e muita diversão em um lugar que prepara de verdade para o futuro.
       </p>
 
       <div class="hero-date-bar">
@@ -568,10 +572,10 @@
           &#128197; <span><strong>6 a 24 de julho</strong></span>
         </div>
         <div class="hero-date-pill">
-          &#128205; <span><strong>910 Sul</strong> — Asa Sul</span>
+          &#128205; <span><strong>910 Sul</strong>, Asa Sul</span>
         </div>
         <div class="hero-date-pill">
-          &#128205; <span><strong>711 Norte</strong> — Asa Norte</span>
+          &#128205; <span><strong>711 Norte</strong>, Asa Norte</span>
         </div>
         <div class="hero-date-pill">
           &#9203; <span><strong>3 semanas</strong> de diversão</span>
@@ -620,22 +624,22 @@
     <!-- Atividades visuais — linha completa -->
     <div class="hero-activities-row">
       <div class="hero-act-card">
-        <span class="hero-act-emoji">&#129670;</span>
+        <img class="hero-act-img" src="img/minecraft.jpg" alt="Minecraft Education" />
         <div class="hero-act-name">Minecraft Education</div>
         <div class="hero-act-desc">Criar mundos, aprender lógica e colaborar em equipe</div>
       </div>
       <div class="hero-act-card">
-        <span class="hero-act-emoji">&#127918;</span>
+        <img class="hero-act-img" src="img/games2d.webp" alt="Games 2D" />
         <div class="hero-act-name">Games 2D</div>
         <div class="hero-act-desc">Desenvolver o próprio jogo do zero, na prática</div>
       </div>
       <div class="hero-act-card">
-        <span class="hero-act-emoji">&#128187;</span>
+        <img class="hero-act-img" src="img/pequenosprogramadores.webp" alt="Pequenos Programadores" />
         <div class="hero-act-name">Pequenos Programadores</div>
         <div class="hero-act-desc">Primeiros passos em programação de um jeito lúdico</div>
       </div>
       <div class="hero-act-card">
-        <span class="hero-act-emoji">&#128247;</span>
+        <img class="hero-act-img" src="img/conteudodigital.webp" alt="Conteúdo Digital" />
         <div class="hero-act-name">Conteúdo Digital</div>
         <div class="hero-act-desc">Criar, editar e produzir conteúdo digital de verdade</div>
       </div>
@@ -643,29 +647,6 @@
   </div>
 </section>
 
-<!-- STATS BAR -->
-<section class="highlight-stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item fade-in">
-        <span class="stat-number">3</span>
-        <span class="stat-label">semanas de imersão</span>
-      </div>
-      <div class="stat-item fade-in">
-        <span class="stat-number">4</span>
-        <span class="stat-label">oficinas tecnológicas</span>
-      </div>
-      <div class="stat-item fade-in">
-        <span class="stat-number">+80 mil</span>
-        <span class="stat-label">alunos na Happy Brasil</span>
-      </div>
-      <div class="stat-item fade-in">
-        <span class="stat-number">100%</span>
-        <span class="stat-label">aprendizado na prática</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SEC 2: ATIVIDADES -->
 <section id="atividades">
@@ -679,13 +660,12 @@
       <!-- Card 1: Minecraft Education -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
-          <div class="ativ-emoji-wrap">&#129670;</div>
           <div class="ativ-name">Minecraft Education</div>
           <div class="ativ-tag">Criatividade & Lógica</div>
         </div>
         <div class="ativ-body">
           <p class="ativ-desc">
-            Muito além do jogo: no Minecraft Education, os alunos constroem mundos, resolvem desafios e aprendem conceitos reais de programação, matemática e trabalho em equipe — tudo enquanto se divertem.
+            Muito além do jogo: no Minecraft Education, os alunos constroem mundos, resolvem desafios e aprendem conceitos reais de programação, matemática e trabalho em equipe, tudo enquanto se divertem.
           </p>
           <div class="ativ-list">
             <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Criação de mundos e construções temáticas</span></div>
@@ -699,13 +679,12 @@
       <!-- Card 2: Games 2D -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
-          <div class="ativ-emoji-wrap">&#127918;</div>
           <div class="ativ-name">Games 2D</div>
           <div class="ativ-tag">Desenvolvimento de Jogos</div>
         </div>
         <div class="ativ-body">
           <p class="ativ-desc">
-            Seu filho deixa de só jogar e passa a criar o próprio jogo do zero. Na oficina de Games 2D, eles aprendem lógica de programação enquanto desenvolvem personagens, fases e mecânicas de um jogo real.
+            Seu filho passa a criar jogos e não apenas brincar. Do raciocínio lógico ao primeiro jogo digital.
           </p>
           <div class="ativ-list">
             <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Criação de personagens e cenários</span></div>
@@ -719,7 +698,6 @@
       <!-- Card 3: Pequenos Programadores -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
-          <div class="ativ-emoji-wrap">&#128187;</div>
           <div class="ativ-name">Pequenos Programadores</div>
           <div class="ativ-tag">Programação Iniciante</div>
         </div>
@@ -739,19 +717,37 @@
       <!-- Card 4: Conteúdo Digital -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
-          <div class="ativ-emoji-wrap">&#128247;</div>
           <div class="ativ-name">Conteúdo Digital</div>
           <div class="ativ-tag">Criação & Comunicação</div>
         </div>
         <div class="ativ-body">
           <p class="ativ-desc">
-            Na era das redes sociais, saber produzir conteúdo é uma habilidade poderosa. Os alunos aprendem a criar, editar e comunicar ideias de forma criativa — com propósito e responsabilidade digital.
+            Na era das redes sociais, saber produzir conteúdo é uma habilidade poderosa. Os alunos aprendem a criar, editar e comunicar ideias de forma criativa, com propósito e responsabilidade digital.
           </p>
           <div class="ativ-list">
             <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Produção de vídeos e fotos temáticas</span></div>
             <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Edição básica de conteúdo digital</span></div>
             <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Storytelling e comunicação criativa</span></div>
             <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Uso responsável e seguro da internet</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Inteligência Artificial -->
+      <div class="ativ-card fade-in">
+        <div class="ativ-header">
+          <div class="ativ-name">Inteligência Artificial</div>
+          <div class="ativ-tag">Tecnologia do Futuro</div>
+        </div>
+        <div class="ativ-body">
+          <p class="ativ-desc">
+            As crianças aprendem Inteligência Artificial na prática: entendem como ela funciona, para que serve e como usar de forma criativa e responsável no dia a dia.
+          </p>
+          <div class="ativ-list">
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>O que é IA e como ela está no nosso cotidiano</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Criação de projetos usando ferramentas de IA</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Uso ético e responsável da tecnologia</span></div>
+            <div class="ativ-item"><span class="ativ-dot">&#10003;</span><span>Como a IA vai transformar o futuro do trabalho</span></div>
           </div>
         </div>
       </div>
@@ -778,7 +774,7 @@
         <div class="cf-step-num">&#128296;</div>
         <div class="cf-step-label">Momento 2</div>
         <h3>Mão na Massa</h3>
-        <p>Os alunos mergulham na oficina do dia — programando, criando, construindo e resolvendo desafios reais.</p>
+        <p>Os alunos mergulham na oficina do dia: programando, criando, construindo e resolvendo desafios reais.</p>
       </div>
       <div class="cf-step fade-in">
         <div class="cf-step-num">&#127942;</div>
@@ -790,7 +786,7 @@
 
     <div class="cf-info-bar fade-in">
       <div class="cf-info-text">
-        <span>6 a 24</span> de julho &nbsp;&#183;&nbsp; <span>910 Sul</span> — Asa Sul &nbsp;&#183;&nbsp; <span>3</span> semanas inesquecíveis
+        <span>6 a 24</span> de julho &nbsp;&#183;&nbsp; <span>910 Sul</span> &nbsp;&#183;&nbsp; <span>3</span> semanas inesquecíveis
       </div>
       <a href="#contato" class="btn btn-acc">QUERO GARANTIR A VAGA</a>
     </div>
@@ -801,7 +797,7 @@
 <section id="diferenciais">
   <div class="container">
     <h2 class="section-title fade-in">Por que escolher a Colônia Happy?</h2>
-    <p class="dif-sub fade-in">Seu filho vai passar as férias de julho de um jeito que vai fazer diferença no ano todo — e na vida.</p>
+    <p class="dif-sub fade-in">Seu filho vai passar as férias de julho de um jeito que vai fazer diferença no ano todo e na vida.</p>
 
     <div class="dif-grid">
       <div class="dif-card fade-in">
@@ -853,7 +849,7 @@
             <div class="dep-avatar">M</div>
             <div class="dep-info">
               <div class="dep-name">Mariana Costa</div>
-              <div class="dep-role">Mãe de aluno — Avaliação Google</div>
+              <div class="dep-role">Mãe de aluno · Avaliação Google</div>
             </div>
           </div>
         </div>
@@ -923,11 +919,11 @@
 
     <div class="unidades-grid">
       <div class="unidade-card fade-in">
-        <div class="unidade-name">Happy Brasília — Asa Sul</div>
+        <div class="unidade-name">Happy Brasília Asa Sul</div>
         <div class="unidade-info">
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>910 Sul — Mix Park Sul, Bloco D</span>
+            <span>910 Sul, Mix Park Sul, Bloco D</span>
           </div>
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
@@ -943,11 +939,11 @@
       </div>
 
       <div class="unidade-card fade-in">
-        <div class="unidade-name">Happy Brasília — Asa Norte</div>
+        <div class="unidade-name">Happy Brasília Asa Norte</div>
         <div class="unidade-info">
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>SHCGN 710/711 loja 27 — Asa Norte</span>
+            <span>SHCGN 710/711 loja 27, Asa Norte</span>
           </div>
           <div class="unidade-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
@@ -992,7 +988,7 @@
           Qual o período de funcionamento da Colônia?
           <span class="faq-chevron">&#8964;</span>
         </button>
-        <div class="faq-a">A Colônia de Férias acontece de 6 a 24 de julho de 2025. Entre em contato com nossa equipe para saber os horários disponíveis e demais informações sobre a grade de atividades.</div>
+        <div class="faq-a">A Colônia de Férias acontece de 6 a 24 de julho de 2026. Entre em contato com nossa equipe para saber os horários disponíveis e demais informações sobre a grade de atividades.</div>
       </div>
 
       <div class="faq-item">
@@ -1037,7 +1033,7 @@
             <div class="curso-tagline">programação e tecnologia</div>
           </div>
         </div>
-        <p class="curso-desc">Seu filho deixa de só jogar e passa a criar. Do raciocínio lógico ao primeiro jogo digital.</p>
+        <p class="curso-desc">Seu filho passa a criar jogos e não apenas brincar. Do raciocínio lógico ao primeiro jogo digital.</p>
         <div class="curso-footer">
           <span class="curso-age">5 a 17 anos</span>
           <a href="happy-code.html" class="btn-curso">SAIBA MAIS</a>
@@ -1278,8 +1274,8 @@
     <h3 style="font-family: var(--title-font); color: var(--blue); margin-bottom: 10px; font-size: 1.4rem;">Escolha uma unidade</h3>
     <p style="color: var(--gray-text); margin-bottom: 20px; font-size: .95rem;">Com qual unidade você deseja falar?</p>
     <div style="display: flex; flex-direction: column; gap: 12px;">
-      <a href="https://wa.me/556132442510" target="_blank" class="btn btn-acc btn-full" onclick="closeWaModal()">910 Sul — Asa Sul</a>
-      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">711 Norte — Asa Norte</a>
+      <a href="https://wa.me/556132442510" target="_blank" class="btn btn-acc btn-full" onclick="closeWaModal()">910 Sul, Asa Sul</a>
+      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">711 Norte, Asa Norte</a>
     </div>
   </div>
 </div>

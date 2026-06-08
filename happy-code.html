@@ -140,6 +140,9 @@
       width: auto;
     }
 
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-sub-brand { color: rgba(255,255,255,.7); font-family: var(--cond-font); font-size: .72rem; letter-spacing: .04em; line-height: 1.25; border-left: 1px solid rgba(255,255,255,.3); padding-left: 12px; text-transform: uppercase; }
+
     #site-header nav {
       display: flex;
       gap: 28px;
@@ -1394,6 +1397,8 @@
         display: none;
       }
 
+      .header-sub-brand { display: none; }
+
       #site-header nav.open {
         display: flex;
         flex-direction: column;
@@ -1587,9 +1592,12 @@
   <!-- HEADER -->
   <header id="site-header">
     <div class="container">
-      <a href="index.html" class="logo">
-        <img src="logo/logo_branco.png" alt="Happy Brasília" />
-      </a>
+      <div class="header-brand">
+        <a href="index.html" class="logo">
+          <img src="logo/logo_branco.png" alt="Happy Brasília" />
+        </a>
+        <span class="header-sub-brand">Asa Sul &amp; Asa Norte · Brasília</span>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -1607,12 +1615,6 @@
   <section id="hero">
     <div class="container">
       <div class="hero-left">
-        <div class="hero-brand">
-          <img src="logo/logo_branco.png" alt="Happy Brasília" />
-          <div class="hero-brand-div"></div>
-          <span class="hero-brand-label">&#128187; Happy Code · Brasília</span>
-        </div>
-
         <div class="code-tag">programacao_do_futuro</div>
 
         <h1>Seu filho já está <span>programando</span> o futuro dele?</h1>
@@ -1623,6 +1625,10 @@
         </p>
 
         <div class="hero-checks">
+          <div class="hero-check">
+            <span class="check-icon">&#10003;</span>
+            <span>Desenvolvimento de games, aplicativos, robótica e Inteligência Artificial</span>
+          </div>
           <div class="hero-check">
             <span class="check-icon">&#10003;</span>
             <span>Metodologia própria (LET): aprender fazendo</span>
@@ -2079,11 +2085,6 @@
           <p class="diferencial-text">Excelência no ensino da língua inglesa com a qualidade reconhecida do Centro Britânico.</p>
         </div>
         <div class="diferencial-card fade-in">
-          <div class="diferencial-icon">&#129302;</div>
-          <div class="diferencial-title">Robôs Dash</div>
-          <p class="diferencial-text">Para os pequenos de 5 e 6 anos aprenderem programação na prática e com muita diversão.</p>
-        </div>
-        <div class="diferencial-card fade-in">
           <div class="diferencial-icon">&#127941;</div>
           <div class="diferencial-title">Competições Internas</div>
           <p class="diferencial-text">Eventos com premiação, como o Ideathon, para estimular o desenvolvimento e a criatividade.</p>
@@ -2119,8 +2120,7 @@
               <div class="curso-tagline">programação e tecnologia</div>
             </div>
           </div>
-          <p class="curso-desc">Seu filho deixa de só jogar e passa a criar. Do raciocínio lógico ao primeiro jogo
-            digital.</p>
+          <p class="curso-desc">Seu filho passa a criar jogos e não apenas brincar. Do raciocínio lógico ao primeiro jogo digital.</p>
           <div class="curso-footer">
             <span class="curso-age">5 a 17 anos</span>
             <a href="happy-code.html" class="btn-curso">SAIBA MAIS</a>

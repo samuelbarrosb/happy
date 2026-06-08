@@ -139,6 +139,23 @@
       width: auto;
     }
 
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-sub-brand {
+      color: rgba(255, 255, 255, .7);
+      font-family: var(--condensed-font);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+      border-left: 1px solid rgba(255, 255, 255, .3);
+      padding-left: 12px;
+      text-transform: uppercase;
+    }
+
     #site-header nav {
       display: flex;
       gap: 28px;
@@ -1578,6 +1595,10 @@
         display: none;
       }
 
+      .header-sub-brand {
+        display: none;
+      }
+
       #site-header nav.open {
         display: flex;
         flex-direction: column;
@@ -1963,9 +1984,12 @@
   <!-- HEADER -->
   <header id="site-header">
     <div class="container">
-      <a href="#" class="logo">
-        <img src="logo/logo_branco.png" alt="Happy Brasília" />
-      </a>
+      <div class="header-brand">
+        <a href="#" class="logo">
+          <img src="logo/logo_branco.png" alt="Happy Brasília" />
+        </a>
+        <span class="header-sub-brand">Asa Sul &amp; Asa Norte · Brasília</span>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -1983,13 +2007,7 @@
   <section id="hero">
     <div class="container">
       <div class="hero-left">
-        <div class="hero-logo-group">
-          <img src="logo/logo_branco.png" alt="Happy Brasília" />
-          <div class="hero-divider"></div>
-          <span class="hero-sub-brand">Asa Sul &amp; Asa Norte · Brasília</span>
-        </div>
-
-        <h1>A escola que prepara seu filho para conquistar o mundo.</h1>
+        <h1>Cursos extracurriculares que preparam seu filho para conquistar o mundo.</h1>
 
         <p class="hero-sub">
           Na Happy Brasília, crianças e adolescentes de 5 a 17 anos desenvolvem as habilidades mais importantes do
@@ -2226,8 +2244,7 @@
               <div class="curso-tagline">programação e tecnologia</div>
             </div>
           </div>
-          <p class="curso-desc">Seu filho deixa de só jogar e passa a criar. Do raciocínio lógico ao primeiro jogo
-            digital.</p>
+          <p class="curso-desc">Seu filho passa a criar jogos e não apenas brincar. Do raciocínio lógico ao primeiro jogo digital.</p>
           <div class="curso-footer">
             <span class="curso-age">5 a 17 anos</span>
             <a href="happy-code.html" class="btn-curso">SAIBA MAIS</a>
@@ -2543,12 +2560,6 @@
           <div class="diferencial-title">Metodologia Centro Britânico</div>
           <p class="diferencial-text">Excelência no ensino da língua inglesa com a qualidade reconhecida do Centro
             Britânico.</p>
-        </div>
-        <div class="diferencial-card fade-in">
-          <div class="diferencial-icon">&#129302;</div>
-          <div class="diferencial-title">Robôs Dash</div>
-          <p class="diferencial-text">Para os pequenos de 5 e 6 anos aprenderem programação na prática e com muita
-            diversão.</p>
         </div>
         <div class="diferencial-card fade-in">
           <div class="diferencial-icon">&#127941;</div>
