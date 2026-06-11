@@ -1278,6 +1278,7 @@
 
     fetch(WEBHOOK_URL + '?' + new URLSearchParams(data))
       .then(() => {
+        fbq('track', 'Lead');
         const p = new URLSearchParams({ nome: data.nome_responsavel, segmento: data.segmento });
         window.location.href = 'obrigado.html?' + p;
       })
