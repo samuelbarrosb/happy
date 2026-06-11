@@ -4,6 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favico.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18229286529"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18229286529');
+  </script>
+
   <title>Happy Code Brasília | Programação para Crianças e Adolescentes</title>
   <meta name="description"
     content="Prepare seu filho para o futuro com o curso de programação do Happy Code em Brasília. Turmas para crianças de 5 a 17 anos. Garanta a vaga!" />
@@ -1664,8 +1675,8 @@
 
       <!-- Formulario -->
       <div class="hero-form-card" id="contato">
-        <h2>Garanta a vaga do seu filho!</h2>
-        <p class="form-sub">Preencha e nossa equipe entra em contato!</p>
+        <h2>Marque uma aula experimental!</h2>
+        <p class="form-sub">Preencha o formulário abaixo e marque uma aula experimental sem compromisso com um dos nossos atendentes.</p>
 
         <form id="form-hero" onsubmit="handleFormSubmit(event)">
           <div class="form-group">
@@ -1678,7 +1689,7 @@
             <input type="number" name="idade" placeholder="Idade da criança *" min="3" max="20" required />
           </div>
           <div class="form-group">
-            <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+            <input type="tel" name="telefone" placeholder="(61) 99999-9999 *" oninput="maskPhone(this)" required />
           </div>
           <div class="form-group">
             <input type="email" name="email" placeholder="E-mail *" required />
@@ -2197,8 +2208,8 @@
         primeiro passo para um futuro incrível.</p>
 
       <div class="cta-final-form fade-in">
-        <h3>Garanta a vaga do seu filho!</h3>
-        <p class="form-sub">Preencha e nossa equipe entra em contato!</p>
+        <h3>Marque uma aula experimental!</h3>
+        <p class="form-sub">Preencha o formulário abaixo e marque uma aula experimental sem compromisso com um dos nossos atendentes.</p>
 
         <form id="form-final" onsubmit="handleFormSubmit(event)">
           <div class="form-group">
@@ -2211,7 +2222,7 @@
             <input type="number" name="idade" placeholder="Idade da criança *" min="3" max="20" required />
           </div>
           <div class="form-group">
-            <input type="tel" name="telefone" placeholder="Telefone / WhatsApp *" required />
+            <input type="tel" name="telefone" placeholder="(61) 99999-9999 *" oninput="maskPhone(this)" required />
           </div>
           <div class="form-group">
             <input type="email" name="email" placeholder="E-mail *" required />
@@ -2353,20 +2364,53 @@
     setInterval(() => goTo((currentIndex + 1) % getTotalSlides()), 5000);
 
     /* FORM */
+    function maskPhone(el) {
+      let v = el.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4,5})(\d*)/, '($1) $2-$3');
+      else if (v.length > 2) v = v.replace(/^(\d{2})(\d+)/, '($1) $2');
+      else if (v.length > 0) v = '(' + v;
+      el.value = v;
+    }
+
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxdAPuH-WCsKqnjFBS5JsNxlD40GiFMgZUUuD3rrdB8OGEpvWxtvWi6izcR-faP8SyEVg/exec';
+
     function handleFormSubmit(e) {
       e.preventDefault();
-      /*
-        TODO: fbq('track', 'Lead');
-        TODO: gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXX/XXXXXXXX' });
-      */
-      const btn = e.target.querySelector('button[type="submit"]');
-      const orig = btn.textContent;
-      btn.textContent = 'Enviado! Entraremos em contato.';
-      btn.style.background = '#28a745';
-      btn.style.color = '#fff';
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      const raw = Object.fromEntries(new FormData(form).entries());
+      const data = {
+        nome_responsavel: raw.nome_responsavel || '',
+        nome_aluno: raw.nome_crianca || '',
+        idade_aluno: raw.idade || '',
+        whatsapp: raw.telefone || '',
+        email: raw.email || '',
+        unidade_interesse: raw.unidade || '',
+        url: window.location.href,
+        segmento: 'Code'
+      };
+
+      btn.textContent = 'Enviando...';
       btn.disabled = true;
-      e.target.reset();
-      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 5000);
+
+      fetch(WEBHOOK_URL + '?' + new URLSearchParams(data))
+        .then(() => {
+          const p = new URLSearchParams({ nome: data.nome_responsavel, segmento: data.segmento });
+          window.location.href = 'obrigado.html?' + p;
+        })
+        .catch(() => {
+          btn.textContent = 'Erro ao enviar. Tente novamente.';
+          btn.style.background = '#dc3545';
+          btn.style.color = '#fff';
+          btn.disabled = false;
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 4000);
+        });
     }
   </script>
 
