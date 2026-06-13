@@ -550,6 +550,28 @@
     .cursos-cta-box { text-align: center; padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
     .cursos-cta-box p { font-size: 1.05rem; color: var(--gray-text); margin-bottom: 16px; }
     .cursos-cta-box strong { color: var(--blue); }
+
+    .btn-vaga-mobile { display: none; }
+    @media (max-width: 768px) {
+      .btn-vaga-mobile {
+        display: block;
+        margin: 30px auto;
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 18px 32px;
+        border-radius: 8px;
+        background: var(--acc);
+        color: #fff;
+        font-weight: 700;
+        font-family: var(--body-font);
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        transition: transform .2s, box-shadow .2s;
+      }
+      .btn-vaga-mobile:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+      .btn-vaga-mobile:active { transform: translateY(0); }
+    }
 </style>
 </head>
 <body>
@@ -595,6 +617,8 @@
       <p class="hero-sub">
         A Happy Brasília tem a resposta e ela é incrível! Três semanas de aprendizado, criatividade e muita diversão em um lugar que prepara de verdade para o futuro.
       </p>
+
+      <button class="btn-vaga-mobile" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Garantir minha vaga!</button>
 
       <div class="hero-date-bar">
         <div class="hero-date-pill">
@@ -1341,8 +1365,8 @@
     <h3 style="font-family: var(--title-font); color: var(--blue); margin-bottom: 10px; font-size: 1.4rem;">Escolha uma unidade</h3>
     <p style="color: var(--gray-text); margin-bottom: 20px; font-size: .95rem;">Com qual unidade você deseja falar?</p>
     <div style="display: flex; flex-direction: column; gap: 12px;">
-      <a href="https://wa.me/556132442510" target="_blank" class="btn btn-acc btn-full" onclick="closeWaModal()">910 Sul, Asa Sul</a>
-      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">711 Norte, Asa Norte</a>
+      <a href="https://wa.me/556132442510?text=Quero%20saber%20mais%20sobre%20a%20Happy" target="_blank" class="btn btn-acc btn-full" onclick="closeWaModal()">910 Sul, Asa Sul</a>
+      <a href="https://wa.me/5561996374604?text=Quero%20saber%20mais%20sobre%20a%20Happy" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">711 Norte, Asa Norte</a>
     </div>
   </div>
 </div>
@@ -1357,34 +1381,6 @@
   window.addEventListener('click', function(e) {
     var modal = document.getElementById('wa-modal');
     if (e.target === modal) closeWaModal();
-  });
-</script>
-
-<!-- MODAL WHATSAPP -->
-<div id="wa-modal" class="wa-modal">
-  <div class="wa-modal-content">
-    <span class="wa-modal-close" onclick="closeWaModal()">&times;</span>
-    <h3 style="font-family: var(--title-font); color: var(--blue); margin-bottom: 10px; font-size: 1.4rem;">Escolha uma unidade</h3>
-    <p style="color: var(--gray-text); margin-bottom: 20px; font-size: .95rem;">Com qual unidade você deseja falar?</p>
-    <div style="display: flex; flex-direction: column; gap: 12px;">
-      <a href="https://wa.me/556132442510" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Sul</a>
-      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Norte</a>
-    </div>
-  </div>
-</div>
-<script>
-  function openWaModal(e) {
-    e.preventDefault();
-    document.getElementById('wa-modal').classList.add('show');
-  }
-  function closeWaModal() {
-    document.getElementById('wa-modal').classList.remove('show');
-  }
-  window.addEventListener('click', function(e) {
-    var modal = document.getElementById('wa-modal');
-    if (e.target === modal) {
-      closeWaModal();
-    }
   });
 </script>
 </body>
