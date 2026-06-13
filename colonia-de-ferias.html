@@ -335,7 +335,7 @@
     .cf-info-bar {
       background: rgba(255,107,53,.12); border: 1px solid rgba(255,107,53,.3);
       border-radius: 16px; padding: 28px 36px;
-      display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; text-align: center;
     }
     .cf-info-text { color: rgba(255,255,255,.9); font-size: 1.15rem; font-weight: 600; letter-spacing: .02em; }
     .cf-info-text span { color: var(--acc2); font-family: var(--title-font); font-size: 1.5rem; }
@@ -572,6 +572,54 @@
       .btn-vaga-mobile:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
       .btn-vaga-mobile:active { transform: translateY(0); }
     }
+
+    /* ===== FAIXA ETÁRIA NOS CARDS ===== */
+    .ativ-age {
+      display: inline-block; background: rgba(255,255,255,.2);
+      border-radius: 20px; padding: 3px 12px; margin-bottom: 8px;
+      font-family: var(--cond-font); font-size: .75rem; font-weight: 700;
+      color: #fff; letter-spacing: .05em; text-transform: uppercase;
+    }
+
+    /* ===== GRADE SEMANAL ===== */
+    .semana-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+    .semana-col {
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      display: flex; flex-direction: column;
+    }
+    .semana-col:nth-child(1) { border-top: 4px solid var(--acc); }
+    .semana-col:nth-child(2) { border-top: 4px solid var(--blue); }
+    .semana-col:nth-child(3) { border-top: 4px solid var(--green); }
+    .semana-header {
+      padding: 16px 20px; text-align: center;
+      font-family: var(--title-font); font-size: 1.25rem; font-weight: 900;
+      letter-spacing: -0.02em; color: #fff;
+    }
+    .semana-col:nth-child(1) .semana-header { background: var(--acc); }
+    .semana-col:nth-child(2) .semana-header { background: var(--blue); }
+    .semana-col:nth-child(3) .semana-header { background: var(--green); }
+    .semana-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .semana-turma { background: var(--gray-bg); border-radius: 10px; padding: 12px 14px; }
+    .semana-idade {
+      font-family: var(--cond-font); font-weight: 700; font-size: .78rem;
+      text-transform: uppercase; letter-spacing: .07em;
+      color: var(--acc); margin-bottom: 4px;
+    }
+    .semana-idade--blue { color: var(--blue); }
+    .semana-idade--green { color: #5a8a1a; }
+    .semana-curso { font-weight: 700; font-size: .92rem; color: #222; margin-bottom: 3px; }
+    .semana-oficina { font-size: .78rem; color: var(--gray-text); }
+    .semana-horario {
+      text-align: center; font-size: .8rem; color: var(--gray-text);
+      padding: 10px 16px 14px; border-top: 1px solid #eee;
+    }
+    .semana-nota {
+      text-align: center; background: var(--acc-light); border-radius: 12px;
+      padding: 18px 24px; color: var(--acc-dark);
+      font-size: .95rem; font-weight: 600; margin-top: 28px;
+    }
+    @media (max-width: 860px) { .semana-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -615,7 +663,7 @@
       <h1>Férias chegando e seu filho ainda não sabe o que vai <span>fazer?</span></h1>
 
       <p class="hero-sub">
-        A Happy Brasília tem a resposta e ela é incrível! Três semanas de aprendizado, criatividade e muita diversão em um lugar que prepara de verdade para o futuro.
+        A Happy Brasília tem a resposta! São 3 semanas com programações diferentes por faixa etária. Você escolhe se seu filho vai em <strong>1, 2 ou nas 3 semanas</strong>, cada uma com cursos e experiências únicas.
       </p>
 
       <button class="btn-vaga-mobile" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Garantir minha vaga!</button>
@@ -631,7 +679,7 @@
           &#128205; <span><strong>711 Norte</strong>, Asa Norte</span>
         </div>
         <div class="hero-date-pill">
-          &#9203; <span><strong>3 semanas</strong> de diversão</span>
+          &#9203; <span>Escolha <strong>1, 2 ou 3 semanas</strong></span>
         </div>
       </div>
 
@@ -706,13 +754,14 @@
   <div class="container">
     <h2 class="section-title fade-in">O que seu filho vai aprender na Colônia?</h2>
     <p class="ativ-sub fade-in">
-      Quatro oficinas pensadas para unir diversão e aprendizado real. Do Minecraft ao desenvolvimento de jogos, seu filho sai das férias com habilidades do futuro.
+      Oficinas pensadas para unir diversão e aprendizado real, separadas por faixa etária. Seu filho sai das férias com habilidades do futuro.
     </p>
 
     <div class="ativ-grid">
       <!-- Card 1: Minecraft Education -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
+          <div class="ativ-age">7 a 9 anos</div>
           <div class="ativ-name">Minecraft Education</div>
           <div class="ativ-tag">Criatividade & Lógica</div>
         </div>
@@ -732,6 +781,7 @@
       <!-- Card 2: Games 2D -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
+          <div class="ativ-age">10 a 12 anos</div>
           <div class="ativ-name">Games 2D</div>
           <div class="ativ-tag">Desenvolvimento de Jogos</div>
         </div>
@@ -751,6 +801,7 @@
       <!-- Card 3: Pequenos Programadores -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
+          <div class="ativ-age">5 e 6 anos</div>
           <div class="ativ-name">Pequenos Programadores</div>
           <div class="ativ-tag">Programação Iniciante</div>
         </div>
@@ -770,6 +821,7 @@
       <!-- Card 4: Conteúdo Digital -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
+          <div class="ativ-age">10 a 12 anos</div>
           <div class="ativ-name">Conteúdo Digital</div>
           <div class="ativ-tag">Criação & Comunicação</div>
         </div>
@@ -789,6 +841,7 @@
       <!-- Card 5: Inteligência Artificial -->
       <div class="ativ-card fade-in">
         <div class="ativ-header">
+          <div class="ativ-age">10 a 12 anos</div>
           <div class="ativ-name">Inteligência Artificial</div>
           <div class="ativ-tag">Tecnologia do Futuro</div>
         </div>
@@ -839,7 +892,7 @@
 
     <div class="cf-info-bar fade-in">
       <div class="cf-info-text">
-        <span>6 a 24</span> de julho &nbsp;&#183;&nbsp; <span>910 Sul</span> &nbsp;&#183;&nbsp; <span>3</span> semanas inesquecíveis
+        <span>6 a 24</span> de julho &nbsp;&#183;&nbsp; <span>910 Sul &amp; 711 Norte</span> &nbsp;&#183;&nbsp; Escolha <span>1, 2 ou 3</span> semanas
       </div>
       <a href="#contato" class="btn btn-acc">QUERO GARANTIR A VAGA</a>
     </div>
