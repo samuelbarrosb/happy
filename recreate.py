@@ -19,7 +19,7 @@ for filepath in html_files:
     content = re.sub(r'<div class="unidade-row">\s*<svg[^>]+><path[^>]+></svg>\s*<span>A confirmar</span>\s*</div>', '', content)
     
     # Add Whatsapp links in Asa Norte & Sul
-    content = re.sub(r'(<span>SHCGN 710/711 loja 27</span>\s*</div>)', r'\1\n          <div class="unidade-row">\n            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>\n            <span>(61) 996374604</span>\n          </div>', content)
+    content = re.sub(r'(<span>SHCGN 710/711 loja 27</span>\s*</div>)', r'\1\n          <div class="unidade-row">\n            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>\n            <span>(61) 994319617</span>\n          </div>', content)
     
     content = re.sub(r'(<span>910 Sul - Mix Park Sul -  Bloco D</span>\s*</div>)', r'\1\n          <div class="unidade-row">\n            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.72 19.79 19.79 0 01.04 1.1 2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>\n            <span>(61) 3244-2510</span>\n          </div>', content)
     
@@ -27,7 +27,7 @@ for filepath in html_files:
     # Asa Sul map img src is unidade-asa-sul.jpeg
     content = re.sub(r'(<img src="img/unidade-asa-sul.jpeg" alt="Happy Brasília Asa Sul" />\s*</div>\s*)<a href="https://wa.me/5561999999999"', r'\1<a href="https://wa.me/556132442510"', content)
     # Asa Norte map img src is unidade-asa-norte.webp
-    content = re.sub(r'(<img src="img/unidade-asa-norte.webp" alt="Happy Brasília Asa Norte" />\s*</div>\s*)<a href="https://wa.me/5561999999999"', r'\1<a href="https://wa.me/5561996374604"', content)
+    content = re.sub(r'(<img src="img/unidade-asa-norte.webp" alt="Happy Brasília Asa Norte" />\s*</div>\s*)<a href="https://wa.me/5561999999999"', r'\1<a href="https://wa.me/5561994319617"', content)
     
     # 3. Differentials
     differentials = """      <div class="diferencial-card fade-in">
@@ -73,7 +73,7 @@ for filepath in html_files:
     <p style="color: var(--gray-text); margin-bottom: 20px; font-size: .95rem;">Com qual unidade você deseja falar?</p>
     <div style="display: flex; flex-direction: column; gap: 12px;">
       <a href="https://wa.me/556132442510" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Sul</a>
-      <a href="https://wa.me/5561996374604" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Norte</a>
+      <a href="https://wa.me/5561994319617" target="_blank" class="btn btn-blue btn-full" onclick="closeWaModal()">Asa Norte</a>
     </div>
   </div>
 </div>
