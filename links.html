@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favico.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18229286529"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18229286529');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1294393116183643');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1294393116183643&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <title>Happy Brasília | Links</title>
+  <meta name="description" content="Todos os links da Happy Brasília em um só lugar: aula experimental, WhatsApp e localização das unidades Asa Norte e Asa Sul." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #0C306C;
+      --blue-dark: #071B3D;
+      --green: #B1CB4E;
+      --whatsapp: #25D366;
+      --yellow: #FCB017;
+      --red: #DD3736;
+      --orange: #F37021;
+      --white: #FFFFFF;
+      --body-font: 'Roboto', Arial, sans-serif;
+      --condensed-font: 'Roboto Condensed', Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--body-font);
+      color: #333;
+      background: linear-gradient(160deg, var(--blue) 0%, var(--blue-dark) 100%);
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      padding: 48px 16px 32px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .links-wrap {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .links-logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    .links-subtitle {
+      margin-top: 18px;
+      color: rgba(255, 255, 255, .75);
+      font-family: var(--condensed-font);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .links-list {
+      width: 100%;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .97);
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .link-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    }
+
+    .link-item--cta {
+      background: var(--yellow);
+    }
+
+    .link-icon {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue);
+    }
+
+    .link-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .link-icon--whatsapp {
+      background: var(--whatsapp);
+    }
+
+    .link-icon--pin {
+      background: var(--red);
+    }
+
+    .link-item--cta .link-icon {
+      background: var(--blue);
+    }
+
+    .link-label {
+      flex: 1 1 auto;
+      font-family: var(--condensed-font);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      color: var(--blue);
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+
+    .link-arrow {
+      flex: 0 0 auto;
+      color: var(--blue);
+      opacity: .5;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .links-footer {
+      margin-top: 36px;
+      color: rgba(255, 255, 255, .5);
+      font-family: var(--condensed-font);
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    @media (min-width: 480px) {
+      .links-logo img {
+        height: 72px;
+      }
+
+      .link-label {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="links-wrap">
+    <div class="links-logo">
+      <img src="logo/logo_branco.png" alt="Happy Brasília" />
+    </div>
+    <p class="links-subtitle">Escolha uma opção abaixo</p>
+
+    <nav class="links-list">
+      <a class="link-item link-item--cta" href="https://www.happybrasilia.com.br/" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 2v3M16 2v3M3.5 9h17M4 6h16a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"
+              stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M8 13.5h2M8 17h2M14 13.5h2M14 17h2" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="link-label">Agende uma aula experimental</span>
+        <span class="link-arrow">›</span>
+      </a>
+
+      <a class="link-item" href="https://wa.me/5561994319617?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Happy" target="_blank" rel="noopener">
+        <span class="link-icon link-icon--whatsapp" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.42 1.27 4.86L2 22l5.34-1.4a9.9 9.9 0 0 0 4.7 1.2h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.2c-1.55 0-3-.42-4.24-1.15l-.3-.18-3.17.83.85-3.1-.2-.32a8.18 8.18 0 0 1-1.26-4.32c0-4.53 3.69-8.22 8.23-8.22 4.53 0 8.22 3.69 8.22 8.22s-3.69 8.24-8.13 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.12-.12.25-.31.37-.47.12-.16.16-.27.24-.44.08-.17.04-.31-.03-.44-.08-.12-.63-1.52-.87-2.08-.23-.55-.46-.47-.63-.48h-.53c-.17 0-.44.06-.68.31-.23.25-.9.88-.9 2.14 0 1.27.92 2.5 1.05 2.67.12.17 1.75 2.67 4.24 3.64 2.5.97 2.5.65 2.95.6.44-.04 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z" />
+          </svg>
+        </span>
+        <span class="link-label">WhatsApp — Asa Norte</span>
+        <span class="link-arrow">›</span>
+      </a>
+
+      <a class="link-item" href="https://maps.app.goo.gl/5QqE4DjHpkjhD6aZA" target="_blank" rel="noopener">
+        <span class="link-icon link-icon--pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"
+              stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round" />
+            <circle cx="12" cy="10" r="2.5" stroke="#FFFFFF" stroke-width="1.8" />
+          </svg>
+        </span>
+        <span class="link-label">Localização — Asa Norte</span>
+        <span class="link-arrow">›</span>
+      </a>
+
+      <a class="link-item" href="https://wa.me/556132442510?text=Ol%C3%A1,%20venho%20atrav%C3%A9s%20do%20Instagram" target="_blank" rel="noopener">
+        <span class="link-icon link-icon--whatsapp" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.42 1.27 4.86L2 22l5.34-1.4a9.9 9.9 0 0 0 4.7 1.2h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.2c-1.55 0-3-.42-4.24-1.15l-.3-.18-3.17.83.85-3.1-.2-.32a8.18 8.18 0 0 1-1.26-4.32c0-4.53 3.69-8.22 8.23-8.22 4.53 0 8.22 3.69 8.22 8.22s-3.69 8.24-8.13 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.12-.12.25-.31.37-.47.12-.16.16-.27.24-.44.08-.17.04-.31-.03-.44-.08-.12-.63-1.52-.87-2.08-.23-.55-.46-.47-.63-.48h-.53c-.17 0-.44.06-.68.31-.23.25-.9.88-.9 2.14 0 1.27.92 2.5 1.05 2.67.12.17 1.75 2.67 4.24 3.64 2.5.97 2.5.65 2.95.6.44-.04 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z" />
+          </svg>
+        </span>
+        <span class="link-label">WhatsApp — Asa Sul</span>
+        <span class="link-arrow">›</span>
+      </a>
+
+      <a class="link-item" href="https://maps.app.goo.gl/RHc3YANSnBySMZgU6" target="_blank" rel="noopener">
+        <span class="link-icon link-icon--pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"
+              stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round" />
+            <circle cx="12" cy="10" r="2.5" stroke="#FFFFFF" stroke-width="1.8" />
+          </svg>
+        </span>
+        <span class="link-label">Localização — Asa Sul</span>
+        <span class="link-arrow">›</span>
+      </a>
+    </nav>
+
+    <p class="links-footer">© 2026 Happy Brasília — Todos os direitos reservados</p>
+  </div>
+</body>
+
+</html>
